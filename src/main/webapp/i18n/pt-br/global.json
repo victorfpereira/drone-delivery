@@ -7,6 +7,13 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Entidades",
+        "empresa": "Empresa",
+        "cliente": "Cliente",
+        "drone": "Drone",
+        "endereco": "Endereco",
+        "telefone": "Telefone",
+        "pedido": "Pedido",
+        "agendamento": "Agendamento",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

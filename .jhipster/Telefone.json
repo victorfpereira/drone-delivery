@@ -1,0 +1,60 @@
+{
+  "applications": ["dronedelivery"],
+  "changelogDate": "20221013193950",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "telefone",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "ddd",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "numero",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "tipoTelefone",
+      "fieldType": "TipoTelefone",
+      "fieldValues": "FIXO (Fixo),CELULAR (Celular)"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "criadoEm",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "atualizadoEm",
+      "fieldType": "Instant"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Telefone",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "empresa",
+      "otherEntityRelationshipName": "telefone",
+      "relationshipName": "empresa",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "cliente",
+      "otherEntityRelationshipName": "telefone",
+      "relationshipName": "cliente",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

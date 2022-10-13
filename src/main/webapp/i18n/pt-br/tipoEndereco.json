@@ -1,0 +1,9 @@
+{
+  "dronedeliveryApp": {
+    "TipoEndereco": {
+      "null": "",
+      "RESIDENCIAL": "Residencial",
+      "COMERCIAL": "Comercial"
+    }
+  }
+}

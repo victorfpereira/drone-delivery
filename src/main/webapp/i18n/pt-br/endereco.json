@@ -1,0 +1,40 @@
+{
+  "dronedeliveryApp": {
+    "endereco": {
+      "home": {
+        "title": "Enderecos",
+        "refreshListLabel": "Atualizar lista",
+        "createLabel": "Criar novo Endereco",
+        "createOrEditLabel": "Criar ou editar Endereco",
+        "notFound": "Nenhum Endereco encontrado"
+      },
+      "created": "Um novo Endereco foi criado com o identificador {{ param }}",
+      "updated": "Um Endereco foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Endereco foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Endereco {{ id }}?"
+      },
+      "detail": {
+        "title": "Endereco"
+      },
+      "id": "Id",
+      "rua": "Rua",
+      "numero": "Numero",
+      "bairro": "Bairro",
+      "cidade": "Cidade",
+      "estado": "Estado",
+      "cep": "Cep",
+      "complemento": "Complemento",
+      "referencia": "Referencia",
+      "tipoEndereco": "Tipo Endereco",
+      "latitude": "Latitude",
+      "longitude": "Longitude",
+      "status": "Status",
+      "criadoEm": "Criado Em",
+      "atualizadoEm": "Atualizado Em",
+      "pedido": "Pedido",
+      "empresa": "Empresa",
+      "cliente": "Cliente"
+    }
+  }
+}

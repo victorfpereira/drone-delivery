@@ -1,0 +1,50 @@
+{
+  "applications": ["dronedelivery"],
+  "changelogDate": "20221013193952",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "agendamento",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "dataAgendada",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "statusAgendamento",
+      "fieldType": "StatusAgendamento",
+      "fieldValues": "AGENDADO,CONCLUIDO"
+    },
+    {
+      "fieldName": "criadoEm",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "atualizadoEm",
+      "fieldType": "Instant"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Agendamento",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "drone",
+      "otherEntityRelationshipName": "agendamento",
+      "relationshipName": "drone",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "pedido",
+      "otherEntityRelationshipName": "agendamento",
+      "relationshipName": "pedido",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}
