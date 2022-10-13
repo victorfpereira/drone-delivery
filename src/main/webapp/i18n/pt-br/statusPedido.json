@@ -1,0 +1,14 @@
+{
+  "dronedeliveryApp": {
+    "StatusPedido": {
+      "null": "",
+      "ABERTO": "ABERTO",
+      "TRANSITO_COLETA": "TRANSITO_COLETA",
+      "COLETADO": "COLETADO",
+      "TRANSITO_ENTREGA": "TRANSITO_ENTREGA",
+      "ENTREGUE": "ENTREGUE",
+      "TRANSITO_RETORNO": "TRANSITO_RETORNO",
+      "CONCLUIDO": "CONCLUIDO"
+    }
+  }
+}

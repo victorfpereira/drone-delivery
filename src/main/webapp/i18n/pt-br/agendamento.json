@@ -1,0 +1,29 @@
+{
+  "dronedeliveryApp": {
+    "agendamento": {
+      "home": {
+        "title": "Agendamentos",
+        "refreshListLabel": "Atualizar lista",
+        "createLabel": "Criar novo Agendamento",
+        "createOrEditLabel": "Criar ou editar Agendamento",
+        "notFound": "Nenhum Agendamento encontrado"
+      },
+      "created": "Um novo Agendamento foi criado com o identificador {{ param }}",
+      "updated": "Um Agendamento foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Agendamento foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Agendamento {{ id }}?"
+      },
+      "detail": {
+        "title": "Agendamento"
+      },
+      "id": "Id",
+      "dataAgendada": "Data Agendada",
+      "statusAgendamento": "Status Agendamento",
+      "criadoEm": "Criado Em",
+      "atualizadoEm": "Atualizado Em",
+      "drone": "Drone",
+      "pedido": "Pedido"
+    }
+  }
+}

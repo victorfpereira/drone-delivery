@@ -1,0 +1,34 @@
+{
+  "dronedeliveryApp": {
+    "empresa": {
+      "home": {
+        "title": "Empresas",
+        "refreshListLabel": "Atualizar lista",
+        "createLabel": "Criar novo Empresa",
+        "createOrEditLabel": "Criar ou editar Empresa",
+        "notFound": "Nenhum Empresa encontrado"
+      },
+      "created": "Um novo Empresa foi criado com o identificador {{ param }}",
+      "updated": "Um Empresa foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Empresa foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Empresa {{ id }}?"
+      },
+      "detail": {
+        "title": "Empresa"
+      },
+      "id": "Id",
+      "razaoSocial": "Razao Social",
+      "nomeFantasia": "Nome Fantasia",
+      "documento": "Documento",
+      "email": "Email",
+      "tipoEmpresa": "Tipo Empresa",
+      "status": "Status",
+      "criadoEm": "Criado Em",
+      "atualizadoEm": "Atualizado Em",
+      "endereco": "Endereco",
+      "telefone": "Telefone",
+      "pedido": "Pedido"
+    }
+  }
+}

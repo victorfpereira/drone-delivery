@@ -1,0 +1,148 @@
+
+application {
+  config {
+    baseName dronedelivery,
+    applicationType monolith,
+    packageName br.com.dronedelivery,
+    authenticationType jwt,
+    prodDatabaseType mysql,
+    clientFramework react
+  }
+  entities *
+}
+
+entity Empresa {
+	id UUID,
+    razaoSocial String required,
+    nomeFantasia String,
+    documento String required unique,
+    email String,
+    tipoEmpresa TipoEmpresa,
+    status Boolean,
+    criadoEm Instant,
+    atualizadoEm Instant
+}
+
+entity Cliente {
+	id UUID,
+    nome String required,
+    documento String required unique,
+    email String,
+    status Boolean,
+    criadoEm Instant,
+    atualizadoEm Instant
+}
+
+entity Drone {
+	id UUID,
+    codigo String required unique,
+    nome String required,
+    descricao String,
+    statusDrone StatusDrone,
+    criadoEm Instant,
+    atualizadoEm Instant
+}
+
+entity Endereco {
+	id UUID,
+	rua String required,
+    numero String required,
+    bairro String required,
+    cidade String required,
+    estado String required,
+    cep String required,
+    complemento String,
+    referencia String,
+    tipoEndereco TipoEndereco,
+    latitude Double,
+    longitude Double,
+    status Boolean,
+    criadoEm Instant,
+    atualizadoEm Instant
+}
+
+entity Telefone {
+	id UUID,
+    ddd String required,
+    numero String required
+    tipoTelefone TipoTelefone,
+    status Boolean,
+    criadoEm Instant,
+    atualizadoEm Instant
+}
+
+entity Pedido {
+	id UUID,
+    codigo Long required unique,
+    notaFiscal String required,
+    statusPedido StatusPedido,
+    criadoEm Instant,
+    atualizadoEm Instant
+}
+
+
+
+entity Agendamento {
+	id UUID,
+    dataAgendada Instant,
+    statusAgendamento StatusAgendamento,
+    criadoEm Instant,
+    atualizadoEm Instant
+}
+
+enum TipoEndereco {
+	RESIDENCIAL (Residencial),
+    COMERCIAL (Comercial)
+}
+
+enum TipoEmpresa {
+	COMERCIO (Comercio),
+    INDUSTRIA (Industria)
+}
+
+enum TipoTelefone {
+	FIXO (Fixo),
+	CELULAR (Celular)
+}
+
+enum StatusPedido {
+	ABERTO,
+    TRANSITO_COLETA,
+    COLETADO,
+    TRANSITO_ENTREGA,
+    ENTREGUE,
+    TRANSITO_RETORNO,
+    CONCLUIDO
+}
+
+enum StatusAgendamento {
+	AGENDADO,
+    CONCLUIDO
+}
+
+enum StatusDrone {
+	LIBERADO,
+    MANUTENCAO,
+    AGENDADO,
+    EXECUTANTO_AGENDAMENTO
+    
+}
+
+relationship OneToMany {
+ 	Empresa to Endereco,
+    Empresa to Telefone,
+    Cliente to Endereco,
+    Cliente to Telefone,
+    Drone to Agendamento,
+    Pedido to Agendamento,
+    Cliente to Pedido,
+    Empresa to Pedido,
+    Endereco to Pedido
+}
+
+paginate * with pagination
+
+dto * with mapstruct
+
+service * with serviceImpl
+    

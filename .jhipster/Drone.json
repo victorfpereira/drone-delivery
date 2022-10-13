@@ -1,0 +1,54 @@
+{
+  "applications": ["dronedelivery"],
+  "changelogDate": "20221013193948",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "drone",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "codigo",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "unique"]
+    },
+    {
+      "fieldName": "nome",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "descricao",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "statusDrone",
+      "fieldType": "StatusDrone",
+      "fieldValues": "LIBERADO,MANUTENCAO,AGENDADO,EXECUTANTO_AGENDAMENTO"
+    },
+    {
+      "fieldName": "criadoEm",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "atualizadoEm",
+      "fieldType": "Instant"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Drone",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "agendamento",
+      "otherEntityRelationshipName": "drone",
+      "relationshipName": "agendamento",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}

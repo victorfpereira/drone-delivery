@@ -1,0 +1,11 @@
+{
+  "dronedeliveryApp": {
+    "StatusDrone": {
+      "null": "",
+      "LIBERADO": "LIBERADO",
+      "MANUTENCAO": "MANUTENCAO",
+      "AGENDADO": "AGENDADO",
+      "EXECUTANTO_AGENDAMENTO": "EXECUTANTO_AGENDAMENTO"
+    }
+  }
+}

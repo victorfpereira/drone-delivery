@@ -48,6 +48,22 @@ public class CacheConfiguration {
             createCache(cm, br.com.dronedelivery.domain.User.class.getName());
             createCache(cm, br.com.dronedelivery.domain.Authority.class.getName());
             createCache(cm, br.com.dronedelivery.domain.User.class.getName() + ".authorities");
+            createCache(cm, br.com.dronedelivery.domain.Empresa.class.getName());
+            createCache(cm, br.com.dronedelivery.domain.Empresa.class.getName() + ".enderecos");
+            createCache(cm, br.com.dronedelivery.domain.Empresa.class.getName() + ".telefones");
+            createCache(cm, br.com.dronedelivery.domain.Empresa.class.getName() + ".pedidos");
+            createCache(cm, br.com.dronedelivery.domain.Cliente.class.getName());
+            createCache(cm, br.com.dronedelivery.domain.Cliente.class.getName() + ".enderecos");
+            createCache(cm, br.com.dronedelivery.domain.Cliente.class.getName() + ".telefones");
+            createCache(cm, br.com.dronedelivery.domain.Cliente.class.getName() + ".pedidos");
+            createCache(cm, br.com.dronedelivery.domain.Drone.class.getName());
+            createCache(cm, br.com.dronedelivery.domain.Drone.class.getName() + ".agendamentos");
+            createCache(cm, br.com.dronedelivery.domain.Endereco.class.getName());
+            createCache(cm, br.com.dronedelivery.domain.Endereco.class.getName() + ".pedidos");
+            createCache(cm, br.com.dronedelivery.domain.Telefone.class.getName());
+            createCache(cm, br.com.dronedelivery.domain.Pedido.class.getName());
+            createCache(cm, br.com.dronedelivery.domain.Pedido.class.getName() + ".agendamentos");
+            createCache(cm, br.com.dronedelivery.domain.Agendamento.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }
