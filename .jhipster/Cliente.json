@@ -1,0 +1,65 @@
+{
+  "applications": ["dronedelivery"],
+  "changelogDate": "20221013180511",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "cliente",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "nome",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "documento",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "unique"]
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "criadoEm",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "atualizadoEm",
+      "fieldType": "Instant"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Cliente",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "endereco",
+      "otherEntityRelationshipName": "cliente",
+      "relationshipName": "endereco",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "telefone",
+      "otherEntityRelationshipName": "cliente",
+      "relationshipName": "telefone",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "pedido",
+      "otherEntityRelationshipName": "solicitante",
+      "relationshipName": "pedido",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}

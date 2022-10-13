@@ -1,0 +1,30 @@
+{
+  "dronedeliveryApp": {
+    "drone": {
+      "home": {
+        "title": "Drones",
+        "refreshListLabel": "Atualizar lista",
+        "createLabel": "Criar novo Drone",
+        "createOrEditLabel": "Criar ou editar Drone",
+        "notFound": "Nenhum Drone encontrado"
+      },
+      "created": "Um novo Drone foi criado com o identificador {{ param }}",
+      "updated": "Um Drone foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Drone foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Drone {{ id }}?"
+      },
+      "detail": {
+        "title": "Drone"
+      },
+      "id": "Id",
+      "codigo": "Codigo",
+      "nome": "Nome",
+      "descricao": "Descricao",
+      "statusDrone": "Status Drone",
+      "criadoEm": "Criado Em",
+      "atualizadoEm": "Atualizado Em",
+      "agendamento": "Agendamento"
+    }
+  }
+}

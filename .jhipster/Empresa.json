@@ -1,0 +1,74 @@
+{
+  "applications": ["dronedelivery"],
+  "changelogDate": "20221013180510",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "empresa",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "razaoSocial",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "nomeFantasia",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "documento",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "unique"]
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "tipoEmpresa",
+      "fieldType": "TipoEmpresa",
+      "fieldValues": "COMERCIO (Comercio),INDUSTRIA (Industria)"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "criadoEm",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "atualizadoEm",
+      "fieldType": "Instant"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Empresa",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "endereco",
+      "otherEntityRelationshipName": "empresa",
+      "relationshipName": "endereco",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "telefone",
+      "otherEntityRelationshipName": "empresa",
+      "relationshipName": "telefone",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "pedido",
+      "otherEntityRelationshipName": "solicitado",
+      "relationshipName": "pedido",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}

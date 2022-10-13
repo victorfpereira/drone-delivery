@@ -1,0 +1,9 @@
+{
+  "dronedeliveryApp": {
+    "StatusAgendamento": {
+      "null": "",
+      "AGENDADO": "AGENDADO",
+      "CONCLUIDO": "CONCLUIDO"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "dronedeliveryApp": {
+    "TipoTelefone": {
+      "null": "",
+      "FIXO": "Fixo",
+      "CELULAR": "Celular"
+    }
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "applications": ["dronedelivery"],
+  "changelogDate": "20221013180515",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "pedido",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "codigo",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required", "unique"]
+    },
+    {
+      "fieldName": "notaFiscal",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "statusPedido",
+      "fieldType": "StatusPedido",
+      "fieldValues": "ABERTO,TRANSITO_COLETA,COLETADO,TRANSITO_ENTREGA,ENTREGUE,TRANSITO_RETORNO,CONCLUIDO"
+    },
+    {
+      "fieldName": "criadoEm",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "atualizadoEm",
+      "fieldType": "Instant"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Pedido",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "agendamento",
+      "otherEntityRelationshipName": "pedido",
+      "relationshipName": "agendamento",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "cliente",
+      "otherEntityRelationshipName": "pedido",
+      "relationshipName": "solicitante",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "empresa",
+      "otherEntityRelationshipName": "pedido",
+      "relationshipName": "solicitado",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "endereco",
+      "otherEntityRelationshipName": "pedido",
+      "relationshipName": "endereco",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

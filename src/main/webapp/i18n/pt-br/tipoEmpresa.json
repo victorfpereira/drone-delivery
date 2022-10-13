@@ -1,0 +1,9 @@
+{
+  "dronedeliveryApp": {
+    "TipoEmpresa": {
+      "null": "",
+      "COMERCIO": "Comercio",
+      "INDUSTRIA": "Industria"
+    }
+  }
+}
