@@ -10,7 +10,7 @@ export interface IDrone {
   statusDrone?: StatusDrone | null;
   criadoEm?: string | null;
   atualizadoEm?: string | null;
-  agendamentos?: IAgendamento[] | null;
+  codigos?: IAgendamento[] | null;
 }
 
 export const defaultValue: Readonly<IDrone> = {};

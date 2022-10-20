@@ -81,6 +81,12 @@ export const EnderecoDetail = () => {
           </dt>
           <dd>{enderecoEntity.referencia}</dd>
           <dt>
+            <span id="enderecoCompleto">
+              <Translate contentKey="dronedeliveryApp.endereco.enderecoCompleto">Endereco Completo</Translate>
+            </span>
+          </dt>
+          <dd>{enderecoEntity.enderecoCompleto}</dd>
+          <dt>
             <span id="tipoEndereco">
               <Translate contentKey="dronedeliveryApp.endereco.tipoEndereco">Tipo Endereco</Translate>
             </span>

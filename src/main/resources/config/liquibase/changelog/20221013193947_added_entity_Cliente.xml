@@ -17,7 +17,7 @@
             <column name="nome" type="varchar(255)">
                 <constraints nullable="false" />
             </column>
-            <column name="documento" type="varchar(255)">
+            <column name="documento" type="integer">
                 <constraints nullable="false" unique="true" uniqueConstraintName="ux_cliente__documento" />
             </column>
             <column name="email" type="varchar(255)">
@@ -56,7 +56,7 @@
                   usePreparedStatements="true">
             <column name="id" type="string"/>
             <column name="nome" type="string"/>
-            <column name="documento" type="string"/>
+            <column name="documento" type="numeric"/>
             <column name="email" type="string"/>
             <column name="status" type="boolean"/>
             <column name="criado_em" type="date"/>

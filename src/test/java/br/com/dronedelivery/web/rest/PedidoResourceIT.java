@@ -36,8 +36,8 @@ class PedidoResourceIT {
     private static final Long DEFAULT_CODIGO = 1L;
     private static final Long UPDATED_CODIGO = 2L;
 
-    private static final String DEFAULT_NOTA_FISCAL = "AAAAAAAAAA";
-    private static final String UPDATED_NOTA_FISCAL = "BBBBBBBBBB";
+    private static final Long DEFAULT_NOTA_FISCAL = 1L;
+    private static final Long UPDATED_NOTA_FISCAL = 2L;
 
     private static final StatusPedido DEFAULT_STATUS_PEDIDO = StatusPedido.ABERTO;
     private static final StatusPedido UPDATED_STATUS_PEDIDO = StatusPedido.TRANSITO_COLETA;
@@ -191,7 +191,7 @@ class PedidoResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(pedido.getId().toString())))
             .andExpect(jsonPath("$.[*].codigo").value(hasItem(DEFAULT_CODIGO.intValue())))
-            .andExpect(jsonPath("$.[*].notaFiscal").value(hasItem(DEFAULT_NOTA_FISCAL)))
+            .andExpect(jsonPath("$.[*].notaFiscal").value(hasItem(DEFAULT_NOTA_FISCAL.intValue())))
             .andExpect(jsonPath("$.[*].statusPedido").value(hasItem(DEFAULT_STATUS_PEDIDO.toString())))
             .andExpect(jsonPath("$.[*].criadoEm").value(hasItem(DEFAULT_CRIADO_EM.toString())))
             .andExpect(jsonPath("$.[*].atualizadoEm").value(hasItem(DEFAULT_ATUALIZADO_EM.toString())));
@@ -210,7 +210,7 @@ class PedidoResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.id").value(pedido.getId().toString()))
             .andExpect(jsonPath("$.codigo").value(DEFAULT_CODIGO.intValue()))
-            .andExpect(jsonPath("$.notaFiscal").value(DEFAULT_NOTA_FISCAL))
+            .andExpect(jsonPath("$.notaFiscal").value(DEFAULT_NOTA_FISCAL.intValue()))
             .andExpect(jsonPath("$.statusPedido").value(DEFAULT_STATUS_PEDIDO.toString()))
             .andExpect(jsonPath("$.criadoEm").value(DEFAULT_CRIADO_EM.toString()))
             .andExpect(jsonPath("$.atualizadoEm").value(DEFAULT_ATUALIZADO_EM.toString()));

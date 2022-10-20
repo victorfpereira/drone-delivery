@@ -16,10 +16,12 @@ public class TelefoneDTO implements Serializable {
     private UUID id;
 
     @NotNull
-    private String ddd;
+    @Max(value = 2)
+    private Integer ddd;
 
     @NotNull
-    private String numero;
+    @Max(value = 9L)
+    private Long numero;
 
     private TipoTelefone tipoTelefone;
 
@@ -41,19 +43,19 @@ public class TelefoneDTO implements Serializable {
         this.id = id;
     }
 
-    public String getDdd() {
+    public Integer getDdd() {
         return ddd;
     }
 
-    public void setDdd(String ddd) {
+    public void setDdd(Integer ddd) {
         this.ddd = ddd;
     }
 
-    public String getNumero() {
+    public Long getNumero() {
         return numero;
     }
 
-    public void setNumero(String numero) {
+    public void setNumero(Long numero) {
         this.numero = numero;
     }
 
@@ -131,8 +133,8 @@ public class TelefoneDTO implements Serializable {
     public String toString() {
         return "TelefoneDTO{" +
             "id='" + getId() + "'" +
-            ", ddd='" + getDdd() + "'" +
-            ", numero='" + getNumero() + "'" +
+            ", ddd=" + getDdd() +
+            ", numero=" + getNumero() +
             ", tipoTelefone='" + getTipoTelefone() + "'" +
             ", status='" + getStatus() + "'" +
             ", criadoEm='" + getCriadoEm() + "'" +

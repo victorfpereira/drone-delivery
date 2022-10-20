@@ -18,7 +18,9 @@ public class ClienteDTO implements Serializable {
     private String nome;
 
     @NotNull
-    private String documento;
+    @Min(value = 11)
+    @Max(value = 11)
+    private Integer documento;
 
     private String email;
 
@@ -44,11 +46,11 @@ public class ClienteDTO implements Serializable {
         this.nome = nome;
     }
 
-    public String getDocumento() {
+    public Integer getDocumento() {
         return documento;
     }
 
-    public void setDocumento(String documento) {
+    public void setDocumento(Integer documento) {
         this.documento = documento;
     }
 
@@ -111,7 +113,7 @@ public class ClienteDTO implements Serializable {
         return "ClienteDTO{" +
             "id='" + getId() + "'" +
             ", nome='" + getNome() + "'" +
-            ", documento='" + getDocumento() + "'" +
+            ", documento=" + getDocumento() +
             ", email='" + getEmail() + "'" +
             ", status='" + getStatus() + "'" +
             ", criadoEm='" + getCriadoEm() + "'" +

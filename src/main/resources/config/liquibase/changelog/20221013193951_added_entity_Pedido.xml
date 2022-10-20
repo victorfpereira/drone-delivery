@@ -17,7 +17,7 @@
             <column name="codigo" type="bigint">
                 <constraints nullable="false" unique="true" uniqueConstraintName="ux_pedido__codigo" />
             </column>
-            <column name="nota_fiscal" type="varchar(255)">
+            <column name="nota_fiscal" type="bigint">
                 <constraints nullable="false" />
             </column>
             <column name="status_pedido" type="varchar(255)">
@@ -62,7 +62,7 @@
                   usePreparedStatements="true">
             <column name="id" type="string"/>
             <column name="codigo" type="numeric"/>
-            <column name="nota_fiscal" type="string"/>
+            <column name="nota_fiscal" type="numeric"/>
             <column name="status_pedido" type="string"/>
             <column name="criado_em" type="date"/>
             <column name="atualizado_em" type="date"/>

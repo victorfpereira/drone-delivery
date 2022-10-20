@@ -24,9 +24,9 @@
       "status": "Status",
       "criadoEm": "Criado Em",
       "atualizadoEm": "Atualizado Em",
-      "endereco": "Endereco",
-      "telefone": "Telefone",
-      "pedido": "Pedido"
+      "nome": "Nome",
+      "nome": "Nome",
+      "nome": "Nome"
     }
   }
 }

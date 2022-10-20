@@ -14,10 +14,10 @@
             <column name="id" type="${uuidType}">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="ddd" type="varchar(255)">
+            <column name="ddd" type="integer">
                 <constraints nullable="false" />
             </column>
-            <column name="numero" type="varchar(255)">
+            <column name="numero" type="bigint">
                 <constraints nullable="false" />
             </column>
             <column name="tipo_telefone" type="varchar(255)">
@@ -61,8 +61,8 @@
                   tableName="telefone"
                   usePreparedStatements="true">
             <column name="id" type="string"/>
-            <column name="ddd" type="string"/>
-            <column name="numero" type="string"/>
+            <column name="ddd" type="numeric"/>
+            <column name="numero" type="numeric"/>
             <column name="tipo_telefone" type="string"/>
             <column name="status" type="boolean"/>
             <column name="criado_em" type="date"/>

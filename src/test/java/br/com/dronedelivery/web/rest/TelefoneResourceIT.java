@@ -33,11 +33,11 @@ import org.springframework.transaction.annotation.Transactional;
 @WithMockUser
 class TelefoneResourceIT {
 
-    private static final String DEFAULT_DDD = "AAAAAAAAAA";
-    private static final String UPDATED_DDD = "BBBBBBBBBB";
+    private static final Integer DEFAULT_DDD = 2;
+    private static final Integer UPDATED_DDD = 1;
 
-    private static final String DEFAULT_NUMERO = "AAAAAAAAAA";
-    private static final String UPDATED_NUMERO = "BBBBBBBBBB";
+    private static final Long DEFAULT_NUMERO = 9L;
+    private static final Long UPDATED_NUMERO = 8L;
 
     private static final TipoTelefone DEFAULT_TIPO_TELEFONE = TipoTelefone.FIXO;
     private static final TipoTelefone UPDATED_TIPO_TELEFONE = TipoTelefone.CELULAR;
@@ -197,7 +197,7 @@ class TelefoneResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(telefone.getId().toString())))
             .andExpect(jsonPath("$.[*].ddd").value(hasItem(DEFAULT_DDD)))
-            .andExpect(jsonPath("$.[*].numero").value(hasItem(DEFAULT_NUMERO)))
+            .andExpect(jsonPath("$.[*].numero").value(hasItem(DEFAULT_NUMERO.intValue())))
             .andExpect(jsonPath("$.[*].tipoTelefone").value(hasItem(DEFAULT_TIPO_TELEFONE.toString())))
             .andExpect(jsonPath("$.[*].status").value(hasItem(DEFAULT_STATUS.booleanValue())))
             .andExpect(jsonPath("$.[*].criadoEm").value(hasItem(DEFAULT_CRIADO_EM.toString())))
@@ -217,7 +217,7 @@ class TelefoneResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.id").value(telefone.getId().toString()))
             .andExpect(jsonPath("$.ddd").value(DEFAULT_DDD))
-            .andExpect(jsonPath("$.numero").value(DEFAULT_NUMERO))
+            .andExpect(jsonPath("$.numero").value(DEFAULT_NUMERO.intValue()))
             .andExpect(jsonPath("$.tipoTelefone").value(DEFAULT_TIPO_TELEFONE.toString()))
             .andExpect(jsonPath("$.status").value(DEFAULT_STATUS.booleanValue()))
             .andExpect(jsonPath("$.criadoEm").value(DEFAULT_CRIADO_EM.toString()))

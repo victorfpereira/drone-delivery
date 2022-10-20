@@ -7,20 +7,21 @@ import { TipoEndereco } from 'app/shared/model/enumerations/tipo-endereco.model'
 export interface IEndereco {
   id?: string;
   rua?: string;
-  numero?: string;
+  numero?: number;
   bairro?: string;
   cidade?: string;
   estado?: string;
   cep?: string;
   complemento?: string | null;
   referencia?: string | null;
+  enderecoCompleto?: string | null;
   tipoEndereco?: TipoEndereco | null;
   latitude?: number | null;
   longitude?: number | null;
   status?: boolean | null;
   criadoEm?: string | null;
   atualizadoEm?: string | null;
-  pedidos?: IPedido[] | null;
+  enderecoCompletos?: IPedido[] | null;
   empresa?: IEmpresa | null;
   cliente?: ICliente | null;
 }

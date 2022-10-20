@@ -36,7 +36,7 @@ public class Pedido implements Serializable {
 
     @NotNull
     @Column(name = "nota_fiscal", nullable = false)
-    private String notaFiscal;
+    private Long notaFiscal;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "status_pedido")
@@ -51,18 +51,18 @@ public class Pedido implements Serializable {
     @OneToMany(mappedBy = "pedido")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     @JsonIgnoreProperties(value = { "drone", "pedido" }, allowSetters = true)
-    private Set<Agendamento> agendamentos = new HashSet<>();
+    private Set<Agendamento> codigos = new HashSet<>();
 
     @ManyToOne
-    @JsonIgnoreProperties(value = { "enderecos", "telefones", "pedidos" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "nomes", "nomes", "nomes" }, allowSetters = true)
     private Cliente cliente;
 
     @ManyToOne
-    @JsonIgnoreProperties(value = { "enderecos", "telefones", "pedidos" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "razaoSocials", "razaoSocials", "razaoSocials" }, allowSetters = true)
     private Empresa empresa;
 
     @ManyToOne
-    @JsonIgnoreProperties(value = { "pedidos", "empresa", "cliente" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "enderecoCompletos", "empresa", "cliente" }, allowSetters = true)
     private Endereco endereco;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
@@ -93,16 +93,16 @@ public class Pedido implements Serializable {
         this.codigo = codigo;
     }
 
-    public String getNotaFiscal() {
+    public Long getNotaFiscal() {
         return this.notaFiscal;
     }
 
-    public Pedido notaFiscal(String notaFiscal) {
+    public Pedido notaFiscal(Long notaFiscal) {
         this.setNotaFiscal(notaFiscal);
         return this;
     }
 
-    public void setNotaFiscal(String notaFiscal) {
+    public void setNotaFiscal(Long notaFiscal) {
         this.notaFiscal = notaFiscal;
     }
 
@@ -145,33 +145,33 @@ public class Pedido implements Serializable {
         this.atualizadoEm = atualizadoEm;
     }
 
-    public Set<Agendamento> getAgendamentos() {
-        return this.agendamentos;
+    public Set<Agendamento> getCodigos() {
+        return this.codigos;
     }
 
-    public void setAgendamentos(Set<Agendamento> agendamentos) {
-        if (this.agendamentos != null) {
-            this.agendamentos.forEach(i -> i.setPedido(null));
+    public void setCodigos(Set<Agendamento> agendamentos) {
+        if (this.codigos != null) {
+            this.codigos.forEach(i -> i.setPedido(null));
         }
         if (agendamentos != null) {
             agendamentos.forEach(i -> i.setPedido(this));
         }
-        this.agendamentos = agendamentos;
+        this.codigos = agendamentos;
     }
 
-    public Pedido agendamentos(Set<Agendamento> agendamentos) {
-        this.setAgendamentos(agendamentos);
+    public Pedido codigos(Set<Agendamento> agendamentos) {
+        this.setCodigos(agendamentos);
         return this;
     }
 
-    public Pedido addAgendamento(Agendamento agendamento) {
-        this.agendamentos.add(agendamento);
+    public Pedido addCodigo(Agendamento agendamento) {
+        this.codigos.add(agendamento);
         agendamento.setPedido(this);
         return this;
     }
 
-    public Pedido removeAgendamento(Agendamento agendamento) {
-        this.agendamentos.remove(agendamento);
+    public Pedido removeCodigo(Agendamento agendamento) {
+        this.codigos.remove(agendamento);
         agendamento.setPedido(null);
         return this;
     }
@@ -240,7 +240,7 @@ public class Pedido implements Serializable {
         return "Pedido{" +
             "id=" + getId() +
             ", codigo=" + getCodigo() +
-            ", notaFiscal='" + getNotaFiscal() + "'" +
+            ", notaFiscal=" + getNotaFiscal() +
             ", statusPedido='" + getStatusPedido() + "'" +
             ", criadoEm='" + getCriadoEm() + "'" +
             ", atualizadoEm='" + getAtualizadoEm() + "'" +

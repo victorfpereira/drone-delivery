@@ -113,6 +113,9 @@ export const ClienteUpdate = () => {
                 type="text"
                 validate={{
                   required: { value: true, message: translate('entity.validation.required') },
+                  min: { value: 11, message: translate('entity.validation.min', { min: 11 }) },
+                  max: { value: 11, message: translate('entity.validation.max', { max: 11 }) },
+                  validate: v => isNumber(v) || translate('entity.validation.number'),
                 }}
               />
               <ValidatedField

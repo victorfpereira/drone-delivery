@@ -20,7 +20,7 @@
             <column name="nome_fantasia" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="documento" type="varchar(255)">
+            <column name="documento" type="integer">
                 <constraints nullable="false" unique="true" uniqueConstraintName="ux_empresa__documento" />
             </column>
             <column name="email" type="varchar(255)">
@@ -63,7 +63,7 @@
             <column name="id" type="string"/>
             <column name="razao_social" type="string"/>
             <column name="nome_fantasia" type="string"/>
-            <column name="documento" type="string"/>
+            <column name="documento" type="numeric"/>
             <column name="email" type="string"/>
             <column name="tipo_empresa" type="string"/>
             <column name="status" type="boolean"/>

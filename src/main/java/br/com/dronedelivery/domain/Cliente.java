@@ -34,8 +34,10 @@ public class Cliente implements Serializable {
     private String nome;
 
     @NotNull
+    @Min(value = 11)
+    @Max(value = 11)
     @Column(name = "documento", nullable = false, unique = true)
-    private String documento;
+    private Integer documento;
 
     @Column(name = "email")
     private String email;
@@ -50,19 +52,31 @@ public class Cliente implements Serializable {
     private Instant atualizadoEm;
 
     @OneToMany(mappedBy = "cliente")
+    @OneToMany(mappedBy = "cliente")
+    @OneToMany(mappedBy = "cliente")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    @JsonIgnoreProperties(value = { "pedidos", "empresa", "cliente" }, allowSetters = true)
-    private Set<Endereco> enderecos = new HashSet<>();
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @JsonIgnoreProperties(value = { "enderecoCompletos", "empresa", "cliente" }, allowSetters = true)
+    private Set<Endereco> nomes = new HashSet<>();
 
     @OneToMany(mappedBy = "cliente")
+    @OneToMany(mappedBy = "cliente")
+    @OneToMany(mappedBy = "cliente")
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     @JsonIgnoreProperties(value = { "empresa", "cliente" }, allowSetters = true)
-    private Set<Telefone> telefones = new HashSet<>();
+    private Set<Telefone> nomes = new HashSet<>();
 
     @OneToMany(mappedBy = "cliente")
+    @OneToMany(mappedBy = "cliente")
+    @OneToMany(mappedBy = "cliente")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    @JsonIgnoreProperties(value = { "agendamentos", "cliente", "empresa", "endereco" }, allowSetters = true)
-    private Set<Pedido> pedidos = new HashSet<>();
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @JsonIgnoreProperties(value = { "codigos", "cliente", "empresa", "endereco" }, allowSetters = true)
+    private Set<Pedido> nomes = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
@@ -92,16 +106,16 @@ public class Cliente implements Serializable {
         this.nome = nome;
     }
 
-    public String getDocumento() {
+    public Integer getDocumento() {
         return this.documento;
     }
 
-    public Cliente documento(String documento) {
+    public Cliente documento(Integer documento) {
         this.setDocumento(documento);
         return this;
     }
 
-    public void setDocumento(String documento) {
+    public void setDocumento(Integer documento) {
         this.documento = documento;
     }
 
@@ -157,95 +171,95 @@ public class Cliente implements Serializable {
         this.atualizadoEm = atualizadoEm;
     }
 
-    public Set<Endereco> getEnderecos() {
-        return this.enderecos;
+    public Set<Endereco> getNomes() {
+        return this.nomes;
     }
 
-    public void setEnderecos(Set<Endereco> enderecos) {
-        if (this.enderecos != null) {
-            this.enderecos.forEach(i -> i.setCliente(null));
+    public void setNomes(Set<Endereco> enderecos) {
+        if (this.nomes != null) {
+            this.nomes.forEach(i -> i.setCliente(null));
         }
         if (enderecos != null) {
             enderecos.forEach(i -> i.setCliente(this));
         }
-        this.enderecos = enderecos;
+        this.nomes = enderecos;
     }
 
-    public Cliente enderecos(Set<Endereco> enderecos) {
-        this.setEnderecos(enderecos);
+    public Cliente nomes(Set<Endereco> enderecos) {
+        this.setNomes(enderecos);
         return this;
     }
 
-    public Cliente addEndereco(Endereco endereco) {
-        this.enderecos.add(endereco);
+    public Cliente addNome(Endereco endereco) {
+        this.nomes.add(endereco);
         endereco.setCliente(this);
         return this;
     }
 
-    public Cliente removeEndereco(Endereco endereco) {
-        this.enderecos.remove(endereco);
+    public Cliente removeNome(Endereco endereco) {
+        this.nomes.remove(endereco);
         endereco.setCliente(null);
         return this;
     }
 
-    public Set<Telefone> getTelefones() {
-        return this.telefones;
+    public Set<Telefone> getNomes() {
+        return this.nomes;
     }
 
-    public void setTelefones(Set<Telefone> telefones) {
-        if (this.telefones != null) {
-            this.telefones.forEach(i -> i.setCliente(null));
+    public void setNomes(Set<Telefone> telefones) {
+        if (this.nomes != null) {
+            this.nomes.forEach(i -> i.setCliente(null));
         }
         if (telefones != null) {
             telefones.forEach(i -> i.setCliente(this));
         }
-        this.telefones = telefones;
+        this.nomes = telefones;
     }
 
-    public Cliente telefones(Set<Telefone> telefones) {
-        this.setTelefones(telefones);
+    public Cliente nomes(Set<Telefone> telefones) {
+        this.setNomes(telefones);
         return this;
     }
 
-    public Cliente addTelefone(Telefone telefone) {
-        this.telefones.add(telefone);
+    public Cliente addNome(Telefone telefone) {
+        this.nomes.add(telefone);
         telefone.setCliente(this);
         return this;
     }
 
-    public Cliente removeTelefone(Telefone telefone) {
-        this.telefones.remove(telefone);
+    public Cliente removeNome(Telefone telefone) {
+        this.nomes.remove(telefone);
         telefone.setCliente(null);
         return this;
     }
 
-    public Set<Pedido> getPedidos() {
-        return this.pedidos;
+    public Set<Pedido> getNomes() {
+        return this.nomes;
     }
 
-    public void setPedidos(Set<Pedido> pedidos) {
-        if (this.pedidos != null) {
-            this.pedidos.forEach(i -> i.setCliente(null));
+    public void setNomes(Set<Pedido> pedidos) {
+        if (this.nomes != null) {
+            this.nomes.forEach(i -> i.setCliente(null));
         }
         if (pedidos != null) {
             pedidos.forEach(i -> i.setCliente(this));
         }
-        this.pedidos = pedidos;
+        this.nomes = pedidos;
     }
 
-    public Cliente pedidos(Set<Pedido> pedidos) {
-        this.setPedidos(pedidos);
+    public Cliente nomes(Set<Pedido> pedidos) {
+        this.setNomes(pedidos);
         return this;
     }
 
-    public Cliente addPedido(Pedido pedido) {
-        this.pedidos.add(pedido);
+    public Cliente addNome(Pedido pedido) {
+        this.nomes.add(pedido);
         pedido.setCliente(this);
         return this;
     }
 
-    public Cliente removePedido(Pedido pedido) {
-        this.pedidos.remove(pedido);
+    public Cliente removeNome(Pedido pedido) {
+        this.nomes.remove(pedido);
         pedido.setCliente(null);
         return this;
     }
@@ -275,7 +289,7 @@ public class Cliente implements Serializable {
         return "Cliente{" +
             "id=" + getId() +
             ", nome='" + getNome() + "'" +
-            ", documento='" + getDocumento() + "'" +
+            ", documento=" + getDocumento() +
             ", email='" + getEmail() + "'" +
             ", status='" + getStatus() + "'" +
             ", criadoEm='" + getCriadoEm() + "'" +

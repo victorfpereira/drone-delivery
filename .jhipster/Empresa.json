@@ -20,8 +20,10 @@
     },
     {
       "fieldName": "documento",
-      "fieldType": "String",
-      "fieldValidateRules": ["required", "unique"]
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required", "unique", "min", "max"],
+      "fieldValidateRulesMax": "14",
+      "fieldValidateRulesMin": "14"
     },
     {
       "fieldName": "email",
@@ -54,19 +56,19 @@
     {
       "otherEntityName": "endereco",
       "otherEntityRelationshipName": "empresa",
-      "relationshipName": "endereco",
+      "relationshipName": "razaoSocial",
       "relationshipType": "one-to-many"
     },
     {
       "otherEntityName": "telefone",
       "otherEntityRelationshipName": "empresa",
-      "relationshipName": "telefone",
+      "relationshipName": "razaoSocial",
       "relationshipType": "one-to-many"
     },
     {
       "otherEntityName": "pedido",
       "otherEntityRelationshipName": "empresa",
-      "relationshipName": "pedido",
+      "relationshipName": "razaoSocial",
       "relationshipType": "one-to-many"
     }
   ],

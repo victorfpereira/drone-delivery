@@ -8,11 +8,11 @@ import { StatusPedido } from 'app/shared/model/enumerations/status-pedido.model'
 export interface IPedido {
   id?: string;
   codigo?: number;
-  notaFiscal?: string;
+  notaFiscal?: number;
   statusPedido?: StatusPedido | null;
   criadoEm?: string | null;
   atualizadoEm?: string | null;
-  agendamentos?: IAgendamento[] | null;
+  codigos?: IAgendamento[] | null;
   cliente?: ICliente | null;
   empresa?: IEmpresa | null;
   endereco?: IEndereco | null;

@@ -136,6 +136,7 @@ export const PedidoUpdate = () => {
                 type="text"
                 validate={{
                   required: { value: true, message: translate('entity.validation.required') },
+                  validate: v => isNumber(v) || translate('entity.validation.number'),
                 }}
               />
               <ValidatedField

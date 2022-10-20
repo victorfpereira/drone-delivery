@@ -129,6 +129,7 @@ export const EnderecoUpdate = () => {
                 type="text"
                 validate={{
                   required: { value: true, message: translate('entity.validation.required') },
+                  validate: v => isNumber(v) || translate('entity.validation.number'),
                 }}
               />
               <ValidatedField
@@ -183,6 +184,13 @@ export const EnderecoUpdate = () => {
                 id="endereco-referencia"
                 name="referencia"
                 data-cy="referencia"
+                type="text"
+              />
+              <ValidatedField
+                label={translate('dronedeliveryApp.endereco.enderecoCompleto')}
+                id="endereco-enderecoCompleto"
+                name="enderecoCompleto"
+                data-cy="enderecoCompleto"
                 type="text"
               />
               <ValidatedField
