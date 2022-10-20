@@ -36,8 +36,8 @@ class EnderecoResourceIT {
     private static final String DEFAULT_RUA = "AAAAAAAAAA";
     private static final String UPDATED_RUA = "BBBBBBBBBB";
 
-    private static final String DEFAULT_NUMERO = "AAAAAAAAAA";
-    private static final String UPDATED_NUMERO = "BBBBBBBBBB";
+    private static final Integer DEFAULT_NUMERO = 1;
+    private static final Integer UPDATED_NUMERO = 2;
 
     private static final String DEFAULT_BAIRRO = "AAAAAAAAAA";
     private static final String UPDATED_BAIRRO = "BBBBBBBBBB";
@@ -56,6 +56,9 @@ class EnderecoResourceIT {
 
     private static final String DEFAULT_REFERENCIA = "AAAAAAAAAA";
     private static final String UPDATED_REFERENCIA = "BBBBBBBBBB";
+
+    private static final String DEFAULT_ENDERECO_COMPLETO = "AAAAAAAAAA";
+    private static final String UPDATED_ENDERECO_COMPLETO = "BBBBBBBBBB";
 
     private static final TipoEndereco DEFAULT_TIPO_ENDERECO = TipoEndereco.RESIDENCIAL;
     private static final TipoEndereco UPDATED_TIPO_ENDERECO = TipoEndereco.COMERCIAL;
@@ -108,6 +111,7 @@ class EnderecoResourceIT {
             .cep(DEFAULT_CEP)
             .complemento(DEFAULT_COMPLEMENTO)
             .referencia(DEFAULT_REFERENCIA)
+            .enderecoCompleto(DEFAULT_ENDERECO_COMPLETO)
             .tipoEndereco(DEFAULT_TIPO_ENDERECO)
             .latitude(DEFAULT_LATITUDE)
             .longitude(DEFAULT_LONGITUDE)
@@ -133,6 +137,7 @@ class EnderecoResourceIT {
             .cep(UPDATED_CEP)
             .complemento(UPDATED_COMPLEMENTO)
             .referencia(UPDATED_REFERENCIA)
+            .enderecoCompleto(UPDATED_ENDERECO_COMPLETO)
             .tipoEndereco(UPDATED_TIPO_ENDERECO)
             .latitude(UPDATED_LATITUDE)
             .longitude(UPDATED_LONGITUDE)
@@ -169,6 +174,7 @@ class EnderecoResourceIT {
         assertThat(testEndereco.getCep()).isEqualTo(DEFAULT_CEP);
         assertThat(testEndereco.getComplemento()).isEqualTo(DEFAULT_COMPLEMENTO);
         assertThat(testEndereco.getReferencia()).isEqualTo(DEFAULT_REFERENCIA);
+        assertThat(testEndereco.getEnderecoCompleto()).isEqualTo(DEFAULT_ENDERECO_COMPLETO);
         assertThat(testEndereco.getTipoEndereco()).isEqualTo(DEFAULT_TIPO_ENDERECO);
         assertThat(testEndereco.getLatitude()).isEqualTo(DEFAULT_LATITUDE);
         assertThat(testEndereco.getLongitude()).isEqualTo(DEFAULT_LONGITUDE);
@@ -324,6 +330,7 @@ class EnderecoResourceIT {
             .andExpect(jsonPath("$.[*].cep").value(hasItem(DEFAULT_CEP)))
             .andExpect(jsonPath("$.[*].complemento").value(hasItem(DEFAULT_COMPLEMENTO)))
             .andExpect(jsonPath("$.[*].referencia").value(hasItem(DEFAULT_REFERENCIA)))
+            .andExpect(jsonPath("$.[*].enderecoCompleto").value(hasItem(DEFAULT_ENDERECO_COMPLETO)))
             .andExpect(jsonPath("$.[*].tipoEndereco").value(hasItem(DEFAULT_TIPO_ENDERECO.toString())))
             .andExpect(jsonPath("$.[*].latitude").value(hasItem(DEFAULT_LATITUDE.doubleValue())))
             .andExpect(jsonPath("$.[*].longitude").value(hasItem(DEFAULT_LONGITUDE.doubleValue())))
@@ -352,6 +359,7 @@ class EnderecoResourceIT {
             .andExpect(jsonPath("$.cep").value(DEFAULT_CEP))
             .andExpect(jsonPath("$.complemento").value(DEFAULT_COMPLEMENTO))
             .andExpect(jsonPath("$.referencia").value(DEFAULT_REFERENCIA))
+            .andExpect(jsonPath("$.enderecoCompleto").value(DEFAULT_ENDERECO_COMPLETO))
             .andExpect(jsonPath("$.tipoEndereco").value(DEFAULT_TIPO_ENDERECO.toString()))
             .andExpect(jsonPath("$.latitude").value(DEFAULT_LATITUDE.doubleValue()))
             .andExpect(jsonPath("$.longitude").value(DEFAULT_LONGITUDE.doubleValue()))
@@ -388,6 +396,7 @@ class EnderecoResourceIT {
             .cep(UPDATED_CEP)
             .complemento(UPDATED_COMPLEMENTO)
             .referencia(UPDATED_REFERENCIA)
+            .enderecoCompleto(UPDATED_ENDERECO_COMPLETO)
             .tipoEndereco(UPDATED_TIPO_ENDERECO)
             .latitude(UPDATED_LATITUDE)
             .longitude(UPDATED_LONGITUDE)
@@ -416,6 +425,7 @@ class EnderecoResourceIT {
         assertThat(testEndereco.getCep()).isEqualTo(UPDATED_CEP);
         assertThat(testEndereco.getComplemento()).isEqualTo(UPDATED_COMPLEMENTO);
         assertThat(testEndereco.getReferencia()).isEqualTo(UPDATED_REFERENCIA);
+        assertThat(testEndereco.getEnderecoCompleto()).isEqualTo(UPDATED_ENDERECO_COMPLETO);
         assertThat(testEndereco.getTipoEndereco()).isEqualTo(UPDATED_TIPO_ENDERECO);
         assertThat(testEndereco.getLatitude()).isEqualTo(UPDATED_LATITUDE);
         assertThat(testEndereco.getLongitude()).isEqualTo(UPDATED_LONGITUDE);
@@ -508,6 +518,7 @@ class EnderecoResourceIT {
             .cep(UPDATED_CEP)
             .complemento(UPDATED_COMPLEMENTO)
             .referencia(UPDATED_REFERENCIA)
+            .longitude(UPDATED_LONGITUDE)
             .status(UPDATED_STATUS)
             .criadoEm(UPDATED_CRIADO_EM)
             .atualizadoEm(UPDATED_ATUALIZADO_EM);
@@ -532,9 +543,10 @@ class EnderecoResourceIT {
         assertThat(testEndereco.getCep()).isEqualTo(UPDATED_CEP);
         assertThat(testEndereco.getComplemento()).isEqualTo(UPDATED_COMPLEMENTO);
         assertThat(testEndereco.getReferencia()).isEqualTo(UPDATED_REFERENCIA);
+        assertThat(testEndereco.getEnderecoCompleto()).isEqualTo(DEFAULT_ENDERECO_COMPLETO);
         assertThat(testEndereco.getTipoEndereco()).isEqualTo(DEFAULT_TIPO_ENDERECO);
         assertThat(testEndereco.getLatitude()).isEqualTo(DEFAULT_LATITUDE);
-        assertThat(testEndereco.getLongitude()).isEqualTo(DEFAULT_LONGITUDE);
+        assertThat(testEndereco.getLongitude()).isEqualTo(UPDATED_LONGITUDE);
         assertThat(testEndereco.getStatus()).isEqualTo(UPDATED_STATUS);
         assertThat(testEndereco.getCriadoEm()).isEqualTo(UPDATED_CRIADO_EM);
         assertThat(testEndereco.getAtualizadoEm()).isEqualTo(UPDATED_ATUALIZADO_EM);
@@ -561,6 +573,7 @@ class EnderecoResourceIT {
             .cep(UPDATED_CEP)
             .complemento(UPDATED_COMPLEMENTO)
             .referencia(UPDATED_REFERENCIA)
+            .enderecoCompleto(UPDATED_ENDERECO_COMPLETO)
             .tipoEndereco(UPDATED_TIPO_ENDERECO)
             .latitude(UPDATED_LATITUDE)
             .longitude(UPDATED_LONGITUDE)
@@ -588,6 +601,7 @@ class EnderecoResourceIT {
         assertThat(testEndereco.getCep()).isEqualTo(UPDATED_CEP);
         assertThat(testEndereco.getComplemento()).isEqualTo(UPDATED_COMPLEMENTO);
         assertThat(testEndereco.getReferencia()).isEqualTo(UPDATED_REFERENCIA);
+        assertThat(testEndereco.getEnderecoCompleto()).isEqualTo(UPDATED_ENDERECO_COMPLETO);
         assertThat(testEndereco.getTipoEndereco()).isEqualTo(UPDATED_TIPO_ENDERECO);
         assertThat(testEndereco.getLatitude()).isEqualTo(UPDATED_LATITUDE);
         assertThat(testEndereco.getLongitude()).isEqualTo(UPDATED_LONGITUDE);

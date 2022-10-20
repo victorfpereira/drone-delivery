@@ -19,7 +19,7 @@ public class EnderecoDTO implements Serializable {
     private String rua;
 
     @NotNull
-    private String numero;
+    private Integer numero;
 
     @NotNull
     private String bairro;
@@ -36,6 +36,8 @@ public class EnderecoDTO implements Serializable {
     private String complemento;
 
     private String referencia;
+
+    private String enderecoCompleto;
 
     private TipoEndereco tipoEndereco;
 
@@ -69,11 +71,11 @@ public class EnderecoDTO implements Serializable {
         this.rua = rua;
     }
 
-    public String getNumero() {
+    public Integer getNumero() {
         return numero;
     }
 
-    public void setNumero(String numero) {
+    public void setNumero(Integer numero) {
         this.numero = numero;
     }
 
@@ -123,6 +125,14 @@ public class EnderecoDTO implements Serializable {
 
     public void setReferencia(String referencia) {
         this.referencia = referencia;
+    }
+
+    public String getEnderecoCompleto() {
+        return enderecoCompleto;
+    }
+
+    public void setEnderecoCompleto(String enderecoCompleto) {
+        this.enderecoCompleto = enderecoCompleto;
     }
 
     public TipoEndereco getTipoEndereco() {
@@ -216,13 +226,14 @@ public class EnderecoDTO implements Serializable {
         return "EnderecoDTO{" +
             "id='" + getId() + "'" +
             ", rua='" + getRua() + "'" +
-            ", numero='" + getNumero() + "'" +
+            ", numero=" + getNumero() +
             ", bairro='" + getBairro() + "'" +
             ", cidade='" + getCidade() + "'" +
             ", estado='" + getEstado() + "'" +
             ", cep='" + getCep() + "'" +
             ", complemento='" + getComplemento() + "'" +
             ", referencia='" + getReferencia() + "'" +
+            ", enderecoCompleto='" + getEnderecoCompleto() + "'" +
             ", tipoEndereco='" + getTipoEndereco() + "'" +
             ", latitude=" + getLatitude() +
             ", longitude=" + getLongitude() +

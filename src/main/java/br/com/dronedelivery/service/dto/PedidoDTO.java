@@ -19,7 +19,7 @@ public class PedidoDTO implements Serializable {
     private Long codigo;
 
     @NotNull
-    private String notaFiscal;
+    private Long notaFiscal;
 
     private StatusPedido statusPedido;
 
@@ -49,11 +49,11 @@ public class PedidoDTO implements Serializable {
         this.codigo = codigo;
     }
 
-    public String getNotaFiscal() {
+    public Long getNotaFiscal() {
         return notaFiscal;
     }
 
-    public void setNotaFiscal(String notaFiscal) {
+    public void setNotaFiscal(Long notaFiscal) {
         this.notaFiscal = notaFiscal;
     }
 
@@ -132,7 +132,7 @@ public class PedidoDTO implements Serializable {
         return "PedidoDTO{" +
             "id='" + getId() + "'" +
             ", codigo=" + getCodigo() +
-            ", notaFiscal='" + getNotaFiscal() + "'" +
+            ", notaFiscal=" + getNotaFiscal() +
             ", statusPedido='" + getStatusPedido() + "'" +
             ", criadoEm='" + getCriadoEm() + "'" +
             ", atualizadoEm='" + getAtualizadoEm() + "'" +

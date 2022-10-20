@@ -123,6 +123,9 @@ export const EmpresaUpdate = () => {
                 type="text"
                 validate={{
                   required: { value: true, message: translate('entity.validation.required') },
+                  min: { value: 14, message: translate('entity.validation.min', { min: 14 }) },
+                  max: { value: 14, message: translate('entity.validation.max', { max: 14 }) },
+                  validate: v => isNumber(v) || translate('entity.validation.number'),
                 }}
               />
               <ValidatedField

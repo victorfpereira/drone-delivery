@@ -38,8 +38,10 @@ public class Empresa implements Serializable {
     private String nomeFantasia;
 
     @NotNull
+    @Min(value = 14)
+    @Max(value = 14)
     @Column(name = "documento", nullable = false, unique = true)
-    private String documento;
+    private Integer documento;
 
     @Column(name = "email")
     private String email;
@@ -58,19 +60,31 @@ public class Empresa implements Serializable {
     private Instant atualizadoEm;
 
     @OneToMany(mappedBy = "empresa")
+    @OneToMany(mappedBy = "empresa")
+    @OneToMany(mappedBy = "empresa")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    @JsonIgnoreProperties(value = { "pedidos", "empresa", "cliente" }, allowSetters = true)
-    private Set<Endereco> enderecos = new HashSet<>();
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @JsonIgnoreProperties(value = { "enderecoCompletos", "empresa", "cliente" }, allowSetters = true)
+    private Set<Endereco> razaoSocials = new HashSet<>();
 
     @OneToMany(mappedBy = "empresa")
+    @OneToMany(mappedBy = "empresa")
+    @OneToMany(mappedBy = "empresa")
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     @JsonIgnoreProperties(value = { "empresa", "cliente" }, allowSetters = true)
-    private Set<Telefone> telefones = new HashSet<>();
+    private Set<Telefone> razaoSocials = new HashSet<>();
 
     @OneToMany(mappedBy = "empresa")
+    @OneToMany(mappedBy = "empresa")
+    @OneToMany(mappedBy = "empresa")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    @JsonIgnoreProperties(value = { "agendamentos", "cliente", "empresa", "endereco" }, allowSetters = true)
-    private Set<Pedido> pedidos = new HashSet<>();
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @JsonIgnoreProperties(value = { "codigos", "cliente", "empresa", "endereco" }, allowSetters = true)
+    private Set<Pedido> razaoSocials = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
@@ -113,16 +127,16 @@ public class Empresa implements Serializable {
         this.nomeFantasia = nomeFantasia;
     }
 
-    public String getDocumento() {
+    public Integer getDocumento() {
         return this.documento;
     }
 
-    public Empresa documento(String documento) {
+    public Empresa documento(Integer documento) {
         this.setDocumento(documento);
         return this;
     }
 
-    public void setDocumento(String documento) {
+    public void setDocumento(Integer documento) {
         this.documento = documento;
     }
 
@@ -191,95 +205,95 @@ public class Empresa implements Serializable {
         this.atualizadoEm = atualizadoEm;
     }
 
-    public Set<Endereco> getEnderecos() {
-        return this.enderecos;
+    public Set<Endereco> getRazaoSocials() {
+        return this.razaoSocials;
     }
 
-    public void setEnderecos(Set<Endereco> enderecos) {
-        if (this.enderecos != null) {
-            this.enderecos.forEach(i -> i.setEmpresa(null));
+    public void setRazaoSocials(Set<Endereco> enderecos) {
+        if (this.razaoSocials != null) {
+            this.razaoSocials.forEach(i -> i.setEmpresa(null));
         }
         if (enderecos != null) {
             enderecos.forEach(i -> i.setEmpresa(this));
         }
-        this.enderecos = enderecos;
+        this.razaoSocials = enderecos;
     }
 
-    public Empresa enderecos(Set<Endereco> enderecos) {
-        this.setEnderecos(enderecos);
+    public Empresa razaoSocials(Set<Endereco> enderecos) {
+        this.setRazaoSocials(enderecos);
         return this;
     }
 
-    public Empresa addEndereco(Endereco endereco) {
-        this.enderecos.add(endereco);
+    public Empresa addRazaoSocial(Endereco endereco) {
+        this.razaoSocials.add(endereco);
         endereco.setEmpresa(this);
         return this;
     }
 
-    public Empresa removeEndereco(Endereco endereco) {
-        this.enderecos.remove(endereco);
+    public Empresa removeRazaoSocial(Endereco endereco) {
+        this.razaoSocials.remove(endereco);
         endereco.setEmpresa(null);
         return this;
     }
 
-    public Set<Telefone> getTelefones() {
-        return this.telefones;
+    public Set<Telefone> getRazaoSocials() {
+        return this.razaoSocials;
     }
 
-    public void setTelefones(Set<Telefone> telefones) {
-        if (this.telefones != null) {
-            this.telefones.forEach(i -> i.setEmpresa(null));
+    public void setRazaoSocials(Set<Telefone> telefones) {
+        if (this.razaoSocials != null) {
+            this.razaoSocials.forEach(i -> i.setEmpresa(null));
         }
         if (telefones != null) {
             telefones.forEach(i -> i.setEmpresa(this));
         }
-        this.telefones = telefones;
+        this.razaoSocials = telefones;
     }
 
-    public Empresa telefones(Set<Telefone> telefones) {
-        this.setTelefones(telefones);
+    public Empresa razaoSocials(Set<Telefone> telefones) {
+        this.setRazaoSocials(telefones);
         return this;
     }
 
-    public Empresa addTelefone(Telefone telefone) {
-        this.telefones.add(telefone);
+    public Empresa addRazaoSocial(Telefone telefone) {
+        this.razaoSocials.add(telefone);
         telefone.setEmpresa(this);
         return this;
     }
 
-    public Empresa removeTelefone(Telefone telefone) {
-        this.telefones.remove(telefone);
+    public Empresa removeRazaoSocial(Telefone telefone) {
+        this.razaoSocials.remove(telefone);
         telefone.setEmpresa(null);
         return this;
     }
 
-    public Set<Pedido> getPedidos() {
-        return this.pedidos;
+    public Set<Pedido> getRazaoSocials() {
+        return this.razaoSocials;
     }
 
-    public void setPedidos(Set<Pedido> pedidos) {
-        if (this.pedidos != null) {
-            this.pedidos.forEach(i -> i.setEmpresa(null));
+    public void setRazaoSocials(Set<Pedido> pedidos) {
+        if (this.razaoSocials != null) {
+            this.razaoSocials.forEach(i -> i.setEmpresa(null));
         }
         if (pedidos != null) {
             pedidos.forEach(i -> i.setEmpresa(this));
         }
-        this.pedidos = pedidos;
+        this.razaoSocials = pedidos;
     }
 
-    public Empresa pedidos(Set<Pedido> pedidos) {
-        this.setPedidos(pedidos);
+    public Empresa razaoSocials(Set<Pedido> pedidos) {
+        this.setRazaoSocials(pedidos);
         return this;
     }
 
-    public Empresa addPedido(Pedido pedido) {
-        this.pedidos.add(pedido);
+    public Empresa addRazaoSocial(Pedido pedido) {
+        this.razaoSocials.add(pedido);
         pedido.setEmpresa(this);
         return this;
     }
 
-    public Empresa removePedido(Pedido pedido) {
-        this.pedidos.remove(pedido);
+    public Empresa removeRazaoSocial(Pedido pedido) {
+        this.razaoSocials.remove(pedido);
         pedido.setEmpresa(null);
         return this;
     }
@@ -310,7 +324,7 @@ public class Empresa implements Serializable {
             "id=" + getId() +
             ", razaoSocial='" + getRazaoSocial() + "'" +
             ", nomeFantasia='" + getNomeFantasia() + "'" +
-            ", documento='" + getDocumento() + "'" +
+            ", documento=" + getDocumento() +
             ", email='" + getEmail() + "'" +
             ", tipoEmpresa='" + getTipoEmpresa() + "'" +
             ", status='" + getStatus() + "'" +

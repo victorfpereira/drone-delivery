@@ -16,7 +16,7 @@
     },
     {
       "fieldName": "notaFiscal",
-      "fieldType": "String",
+      "fieldType": "Long",
       "fieldValidateRules": ["required"]
     },
     {
@@ -42,24 +42,24 @@
     {
       "otherEntityName": "agendamento",
       "otherEntityRelationshipName": "pedido",
-      "relationshipName": "agendamento",
+      "relationshipName": "codigo",
       "relationshipType": "one-to-many"
     },
     {
       "otherEntityName": "cliente",
-      "otherEntityRelationshipName": "pedido",
+      "otherEntityRelationshipName": "nome",
       "relationshipName": "cliente",
       "relationshipType": "many-to-one"
     },
     {
       "otherEntityName": "empresa",
-      "otherEntityRelationshipName": "pedido",
+      "otherEntityRelationshipName": "razaoSocial",
       "relationshipName": "empresa",
       "relationshipType": "many-to-one"
     },
     {
       "otherEntityName": "endereco",
-      "otherEntityRelationshipName": "pedido",
+      "otherEntityRelationshipName": "enderecoCompleto",
       "relationshipName": "endereco",
       "relationshipType": "many-to-one"
     }

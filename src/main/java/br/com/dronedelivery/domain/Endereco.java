@@ -36,7 +36,7 @@ public class Endereco implements Serializable {
 
     @NotNull
     @Column(name = "numero", nullable = false)
-    private String numero;
+    private Integer numero;
 
     @NotNull
     @Column(name = "bairro", nullable = false)
@@ -60,6 +60,9 @@ public class Endereco implements Serializable {
     @Column(name = "referencia")
     private String referencia;
 
+    @Column(name = "endereco_completo")
+    private String enderecoCompleto;
+
     @Enumerated(EnumType.STRING)
     @Column(name = "tipo_endereco")
     private TipoEndereco tipoEndereco;
@@ -81,15 +84,15 @@ public class Endereco implements Serializable {
 
     @OneToMany(mappedBy = "endereco")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    @JsonIgnoreProperties(value = { "agendamentos", "cliente", "empresa", "endereco" }, allowSetters = true)
-    private Set<Pedido> pedidos = new HashSet<>();
+    @JsonIgnoreProperties(value = { "codigos", "cliente", "empresa", "endereco" }, allowSetters = true)
+    private Set<Pedido> enderecoCompletos = new HashSet<>();
 
     @ManyToOne
-    @JsonIgnoreProperties(value = { "enderecos", "telefones", "pedidos" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "razaoSocials", "razaoSocials", "razaoSocials" }, allowSetters = true)
     private Empresa empresa;
 
     @ManyToOne
-    @JsonIgnoreProperties(value = { "enderecos", "telefones", "pedidos" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "nomes", "nomes", "nomes" }, allowSetters = true)
     private Cliente cliente;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
@@ -120,16 +123,16 @@ public class Endereco implements Serializable {
         this.rua = rua;
     }
 
-    public String getNumero() {
+    public Integer getNumero() {
         return this.numero;
     }
 
-    public Endereco numero(String numero) {
+    public Endereco numero(Integer numero) {
         this.setNumero(numero);
         return this;
     }
 
-    public void setNumero(String numero) {
+    public void setNumero(Integer numero) {
         this.numero = numero;
     }
 
@@ -211,6 +214,19 @@ public class Endereco implements Serializable {
         this.referencia = referencia;
     }
 
+    public String getEnderecoCompleto() {
+        return this.enderecoCompleto;
+    }
+
+    public Endereco enderecoCompleto(String enderecoCompleto) {
+        this.setEnderecoCompleto(enderecoCompleto);
+        return this;
+    }
+
+    public void setEnderecoCompleto(String enderecoCompleto) {
+        this.enderecoCompleto = enderecoCompleto;
+    }
+
     public TipoEndereco getTipoEndereco() {
         return this.tipoEndereco;
     }
@@ -289,33 +305,33 @@ public class Endereco implements Serializable {
         this.atualizadoEm = atualizadoEm;
     }
 
-    public Set<Pedido> getPedidos() {
-        return this.pedidos;
+    public Set<Pedido> getEnderecoCompletos() {
+        return this.enderecoCompletos;
     }
 
-    public void setPedidos(Set<Pedido> pedidos) {
-        if (this.pedidos != null) {
-            this.pedidos.forEach(i -> i.setEndereco(null));
+    public void setEnderecoCompletos(Set<Pedido> pedidos) {
+        if (this.enderecoCompletos != null) {
+            this.enderecoCompletos.forEach(i -> i.setEndereco(null));
         }
         if (pedidos != null) {
             pedidos.forEach(i -> i.setEndereco(this));
         }
-        this.pedidos = pedidos;
+        this.enderecoCompletos = pedidos;
     }
 
-    public Endereco pedidos(Set<Pedido> pedidos) {
-        this.setPedidos(pedidos);
+    public Endereco enderecoCompletos(Set<Pedido> pedidos) {
+        this.setEnderecoCompletos(pedidos);
         return this;
     }
 
-    public Endereco addPedido(Pedido pedido) {
-        this.pedidos.add(pedido);
+    public Endereco addEnderecoCompleto(Pedido pedido) {
+        this.enderecoCompletos.add(pedido);
         pedido.setEndereco(this);
         return this;
     }
 
-    public Endereco removePedido(Pedido pedido) {
-        this.pedidos.remove(pedido);
+    public Endereco removeEnderecoCompleto(Pedido pedido) {
+        this.enderecoCompletos.remove(pedido);
         pedido.setEndereco(null);
         return this;
     }
@@ -371,13 +387,14 @@ public class Endereco implements Serializable {
         return "Endereco{" +
             "id=" + getId() +
             ", rua='" + getRua() + "'" +
-            ", numero='" + getNumero() + "'" +
+            ", numero=" + getNumero() +
             ", bairro='" + getBairro() + "'" +
             ", cidade='" + getCidade() + "'" +
             ", estado='" + getEstado() + "'" +
             ", cep='" + getCep() + "'" +
             ", complemento='" + getComplemento() + "'" +
             ", referencia='" + getReferencia() + "'" +
+            ", enderecoCompleto='" + getEnderecoCompleto() + "'" +
             ", tipoEndereco='" + getTipoEndereco() + "'" +
             ", latitude=" + getLatitude() +
             ", longitude=" + getLongitude() +

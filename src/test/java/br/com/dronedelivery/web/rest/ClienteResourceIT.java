@@ -35,8 +35,8 @@ class ClienteResourceIT {
     private static final String DEFAULT_NOME = "AAAAAAAAAA";
     private static final String UPDATED_NOME = "BBBBBBBBBB";
 
-    private static final String DEFAULT_DOCUMENTO = "AAAAAAAAAA";
-    private static final String UPDATED_DOCUMENTO = "BBBBBBBBBB";
+    private static final Integer DEFAULT_DOCUMENTO = 11;
+    private static final Integer UPDATED_DOCUMENTO = 12;
 
     private static final String DEFAULT_EMAIL = "AAAAAAAAAA";
     private static final String UPDATED_EMAIL = "BBBBBBBBBB";

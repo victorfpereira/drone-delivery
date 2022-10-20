@@ -29,12 +29,14 @@ public class Telefone implements Serializable {
     private UUID id;
 
     @NotNull
+    @Max(value = 2)
     @Column(name = "ddd", nullable = false)
-    private String ddd;
+    private Integer ddd;
 
     @NotNull
+    @Max(value = 9L)
     @Column(name = "numero", nullable = false)
-    private String numero;
+    private Long numero;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "tipo_telefone")
@@ -50,11 +52,11 @@ public class Telefone implements Serializable {
     private Instant atualizadoEm;
 
     @ManyToOne
-    @JsonIgnoreProperties(value = { "enderecos", "telefones", "pedidos" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "razaoSocials", "razaoSocials", "razaoSocials" }, allowSetters = true)
     private Empresa empresa;
 
     @ManyToOne
-    @JsonIgnoreProperties(value = { "enderecos", "telefones", "pedidos" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "nomes", "nomes", "nomes" }, allowSetters = true)
     private Cliente cliente;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
@@ -72,29 +74,29 @@ public class Telefone implements Serializable {
         this.id = id;
     }
 
-    public String getDdd() {
+    public Integer getDdd() {
         return this.ddd;
     }
 
-    public Telefone ddd(String ddd) {
+    public Telefone ddd(Integer ddd) {
         this.setDdd(ddd);
         return this;
     }
 
-    public void setDdd(String ddd) {
+    public void setDdd(Integer ddd) {
         this.ddd = ddd;
     }
 
-    public String getNumero() {
+    public Long getNumero() {
         return this.numero;
     }
 
-    public Telefone numero(String numero) {
+    public Telefone numero(Long numero) {
         this.setNumero(numero);
         return this;
     }
 
-    public void setNumero(String numero) {
+    public void setNumero(Long numero) {
         this.numero = numero;
     }
 
@@ -200,8 +202,8 @@ public class Telefone implements Serializable {
     public String toString() {
         return "Telefone{" +
             "id=" + getId() +
-            ", ddd='" + getDdd() + "'" +
-            ", numero='" + getNumero() + "'" +
+            ", ddd=" + getDdd() +
+            ", numero=" + getNumero() +
             ", tipoTelefone='" + getTipoTelefone() + "'" +
             ", status='" + getStatus() + "'" +
             ", criadoEm='" + getCriadoEm() + "'" +

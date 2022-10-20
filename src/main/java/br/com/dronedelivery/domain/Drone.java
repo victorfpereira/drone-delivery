@@ -54,7 +54,7 @@ public class Drone implements Serializable {
     @OneToMany(mappedBy = "drone")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     @JsonIgnoreProperties(value = { "drone", "pedido" }, allowSetters = true)
-    private Set<Agendamento> agendamentos = new HashSet<>();
+    private Set<Agendamento> codigos = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
@@ -149,33 +149,33 @@ public class Drone implements Serializable {
         this.atualizadoEm = atualizadoEm;
     }
 
-    public Set<Agendamento> getAgendamentos() {
-        return this.agendamentos;
+    public Set<Agendamento> getCodigos() {
+        return this.codigos;
     }
 
-    public void setAgendamentos(Set<Agendamento> agendamentos) {
-        if (this.agendamentos != null) {
-            this.agendamentos.forEach(i -> i.setDrone(null));
+    public void setCodigos(Set<Agendamento> agendamentos) {
+        if (this.codigos != null) {
+            this.codigos.forEach(i -> i.setDrone(null));
         }
         if (agendamentos != null) {
             agendamentos.forEach(i -> i.setDrone(this));
         }
-        this.agendamentos = agendamentos;
+        this.codigos = agendamentos;
     }
 
-    public Drone agendamentos(Set<Agendamento> agendamentos) {
-        this.setAgendamentos(agendamentos);
+    public Drone codigos(Set<Agendamento> agendamentos) {
+        this.setCodigos(agendamentos);
         return this;
     }
 
-    public Drone addAgendamento(Agendamento agendamento) {
-        this.agendamentos.add(agendamento);
+    public Drone addCodigo(Agendamento agendamento) {
+        this.codigos.add(agendamento);
         agendamento.setDrone(this);
         return this;
     }
 
-    public Drone removeAgendamento(Agendamento agendamento) {
-        this.agendamentos.remove(agendamento);
+    public Drone removeCodigo(Agendamento agendamento) {
+        this.codigos.remove(agendamento);
         agendamento.setDrone(null);
         return this;
     }

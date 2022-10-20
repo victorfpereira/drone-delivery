@@ -5,8 +5,8 @@ import { TipoTelefone } from 'app/shared/model/enumerations/tipo-telefone.model'
 
 export interface ITelefone {
   id?: string;
-  ddd?: string;
-  numero?: string;
+  ddd?: number;
+  numero?: number;
   tipoTelefone?: TipoTelefone | null;
   status?: boolean | null;
   criadoEm?: string | null;

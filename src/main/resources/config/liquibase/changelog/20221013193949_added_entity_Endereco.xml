@@ -17,7 +17,7 @@
             <column name="rua" type="varchar(255)">
                 <constraints nullable="false" />
             </column>
-            <column name="numero" type="varchar(255)">
+            <column name="numero" type="integer">
                 <constraints nullable="false" />
             </column>
             <column name="bairro" type="varchar(255)">
@@ -36,6 +36,9 @@
                 <constraints nullable="true" />
             </column>
             <column name="referencia" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="endereco_completo" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
             <column name="tipo_endereco" type="varchar(255)">
@@ -86,13 +89,14 @@
                   usePreparedStatements="true">
             <column name="id" type="string"/>
             <column name="rua" type="string"/>
-            <column name="numero" type="string"/>
+            <column name="numero" type="numeric"/>
             <column name="bairro" type="string"/>
             <column name="cidade" type="string"/>
             <column name="estado" type="string"/>
             <column name="cep" type="string"/>
             <column name="complemento" type="string"/>
             <column name="referencia" type="string"/>
+            <column name="endereco_completo" type="string"/>
             <column name="tipo_endereco" type="string"/>
             <column name="latitude" type="numeric"/>
             <column name="longitude" type="numeric"/>

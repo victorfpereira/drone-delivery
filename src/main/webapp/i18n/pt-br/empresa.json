@@ -26,9 +26,9 @@
       "status": "Status",
       "criadoEm": "Criado Em",
       "atualizadoEm": "Atualizado Em",
-      "endereco": "Endereco",
-      "telefone": "Telefone",
-      "pedido": "Pedido"
+      "razaoSocial": "Razao Social",
+      "razaoSocial": "Razao Social",
+      "razaoSocial": "Razao Social"
     }
   }
 }

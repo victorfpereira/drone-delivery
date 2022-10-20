@@ -129,6 +129,10 @@ export const Endereco = () => {
                 <th className="hand" onClick={sort('referencia')}>
                   <Translate contentKey="dronedeliveryApp.endereco.referencia">Referencia</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
+                <th className="hand" onClick={sort('enderecoCompleto')}>
+                  <Translate contentKey="dronedeliveryApp.endereco.enderecoCompleto">Endereco Completo</Translate>{' '}
+                  <FontAwesomeIcon icon="sort" />
+                </th>
                 <th className="hand" onClick={sort('tipoEndereco')}>
                   <Translate contentKey="dronedeliveryApp.endereco.tipoEndereco">Tipo Endereco</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
@@ -172,6 +176,7 @@ export const Endereco = () => {
                   <td>{endereco.cep}</td>
                   <td>{endereco.complemento}</td>
                   <td>{endereco.referencia}</td>
+                  <td>{endereco.enderecoCompleto}</td>
                   <td>
                     <Translate contentKey={`dronedeliveryApp.TipoEndereco.${endereco.tipoEndereco}`} />
                   </td>

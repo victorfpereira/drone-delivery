@@ -26,13 +26,14 @@
       "cep": "Cep",
       "complemento": "Complemento",
       "referencia": "Referencia",
+      "enderecoCompleto": "Endereco Completo",
       "tipoEndereco": "Tipo Endereco",
       "latitude": "Latitude",
       "longitude": "Longitude",
       "status": "Status",
       "criadoEm": "Criado Em",
       "atualizadoEm": "Atualizado Em",
-      "pedido": "Pedido",
+      "enderecoCompleto": "Endereco Completo",
       "empresa": "Empresa",
       "cliente": "Cliente"
     }

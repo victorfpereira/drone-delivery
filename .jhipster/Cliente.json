@@ -16,8 +16,10 @@
     },
     {
       "fieldName": "documento",
-      "fieldType": "String",
-      "fieldValidateRules": ["required", "unique"]
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required", "unique", "min", "max"],
+      "fieldValidateRulesMax": "11",
+      "fieldValidateRulesMin": "11"
     },
     {
       "fieldName": "email",
@@ -45,19 +47,19 @@
     {
       "otherEntityName": "endereco",
       "otherEntityRelationshipName": "cliente",
-      "relationshipName": "endereco",
+      "relationshipName": "nome",
       "relationshipType": "one-to-many"
     },
     {
       "otherEntityName": "telefone",
       "otherEntityRelationshipName": "cliente",
-      "relationshipName": "telefone",
+      "relationshipName": "nome",
       "relationshipType": "one-to-many"
     },
     {
       "otherEntityName": "pedido",
       "otherEntityRelationshipName": "cliente",
-      "relationshipName": "pedido",
+      "relationshipName": "nome",
       "relationshipType": "one-to-many"
     }
   ],

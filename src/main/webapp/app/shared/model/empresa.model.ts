@@ -8,15 +8,15 @@ export interface IEmpresa {
   id?: string;
   razaoSocial?: string;
   nomeFantasia?: string | null;
-  documento?: string;
+  documento?: number;
   email?: string | null;
   tipoEmpresa?: TipoEmpresa | null;
   status?: boolean | null;
   criadoEm?: string | null;
   atualizadoEm?: string | null;
-  enderecos?: IEndereco[] | null;
-  telefones?: ITelefone[] | null;
-  pedidos?: IPedido[] | null;
+  razaoSocials?: IEndereco[] | null;
+  razaoSocials?: ITelefone[] | null;
+  razaoSocials?: IPedido[] | null;
 }
 
 export const defaultValue: Readonly<IEmpresa> = {

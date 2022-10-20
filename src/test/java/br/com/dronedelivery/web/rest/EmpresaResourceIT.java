@@ -39,8 +39,8 @@ class EmpresaResourceIT {
     private static final String DEFAULT_NOME_FANTASIA = "AAAAAAAAAA";
     private static final String UPDATED_NOME_FANTASIA = "BBBBBBBBBB";
 
-    private static final String DEFAULT_DOCUMENTO = "AAAAAAAAAA";
-    private static final String UPDATED_DOCUMENTO = "BBBBBBBBBB";
+    private static final Integer DEFAULT_DOCUMENTO = 14;
+    private static final Integer UPDATED_DOCUMENTO = 15;
 
     private static final String DEFAULT_EMAIL = "AAAAAAAAAA";
     private static final String UPDATED_EMAIL = "BBBBBBBBBB";

@@ -15,7 +15,7 @@ entity Empresa {
 	id UUID,
     razaoSocial String required,
     nomeFantasia String,
-    documento String required unique,
+    documento Integer required unique min(14) max(14),
     email String,
     tipoEmpresa TipoEmpresa,
     status Boolean,
@@ -26,7 +26,7 @@ entity Empresa {
 entity Cliente {
 	id UUID,
     nome String required,
-    documento String required unique,
+    documento Integer required unique min(11) max(11),
     email String,
     status Boolean,
     criadoEm Instant,
@@ -46,13 +46,14 @@ entity Drone {
 entity Endereco {
 	id UUID,
 	rua String required,
-    numero String required,
+    numero Integer required,
     bairro String required,
     cidade String required,
     estado String required,
     cep String required,
     complemento String,
     referencia String,
+    enderecoCompleto String,
     tipoEndereco TipoEndereco,
     latitude Double,
     longitude Double,
@@ -63,8 +64,8 @@ entity Endereco {
 
 entity Telefone {
 	id UUID,
-    ddd String required,
-    numero String required
+    ddd Integer required max(2),
+    numero Long required max(9)
     tipoTelefone TipoTelefone,
     status Boolean,
     criadoEm Instant,
@@ -74,7 +75,7 @@ entity Telefone {
 entity Pedido {
 	id UUID,
     codigo Long required unique,
-    notaFiscal String required,
+    notaFiscal Long required,
     statusPedido StatusPedido,
     criadoEm Instant,
     atualizadoEm Instant
@@ -129,15 +130,15 @@ enum StatusDrone {
 }
 
 relationship OneToMany {
- 	Empresa to Endereco,
-    Empresa to Telefone,
-    Cliente to Endereco,
-    Cliente to Telefone,
-    Drone to Agendamento,
-    Pedido to Agendamento,
-    Cliente to Pedido,
-    Empresa to Pedido,
-    Endereco to Pedido
+ 	Empresa{razaoSocial} to Endereco,
+    Empresa{razaoSocial} to Telefone,
+    Cliente{nome} to Endereco,
+    Cliente{nome} to Telefone,
+    Drone{codigo} to Agendamento,
+    Pedido{codigo} to Agendamento,
+    Cliente{nome} to Pedido,
+    Empresa{razaoSocial} to Pedido,
+    Endereco{enderecoCompleto} to Pedido
 }
 
 paginate * with pagination

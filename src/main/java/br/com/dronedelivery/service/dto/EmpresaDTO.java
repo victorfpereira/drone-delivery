@@ -21,7 +21,9 @@ public class EmpresaDTO implements Serializable {
     private String nomeFantasia;
 
     @NotNull
-    private String documento;
+    @Min(value = 14)
+    @Max(value = 14)
+    private Integer documento;
 
     private String email;
 
@@ -57,11 +59,11 @@ public class EmpresaDTO implements Serializable {
         this.nomeFantasia = nomeFantasia;
     }
 
-    public String getDocumento() {
+    public Integer getDocumento() {
         return documento;
     }
 
-    public void setDocumento(String documento) {
+    public void setDocumento(Integer documento) {
         this.documento = documento;
     }
 
@@ -133,7 +135,7 @@ public class EmpresaDTO implements Serializable {
             "id='" + getId() + "'" +
             ", razaoSocial='" + getRazaoSocial() + "'" +
             ", nomeFantasia='" + getNomeFantasia() + "'" +
-            ", documento='" + getDocumento() + "'" +
+            ", documento=" + getDocumento() +
             ", email='" + getEmail() + "'" +
             ", tipoEmpresa='" + getTipoEmpresa() + "'" +
             ", status='" + getStatus() + "'" +
