@@ -50,11 +50,11 @@ public class Telefone implements Serializable {
     private Instant atualizadoEm;
 
     @ManyToOne
-    @JsonIgnoreProperties(value = { "razaoSocials", "razaoSocials", "razaoSocials" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "enderecos", "telefones", "pedidos" }, allowSetters = true)
     private Empresa empresa;
 
     @ManyToOne
-    @JsonIgnoreProperties(value = { "nomes", "nomes", "nomes" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "enderecos", "telefones", "pedidos" }, allowSetters = true)
     private Cliente cliente;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here

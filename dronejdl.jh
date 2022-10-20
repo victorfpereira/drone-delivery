@@ -130,15 +130,15 @@ enum StatusDrone {
 }
 
 relationship OneToMany {
- 	Empresa{razaoSocial} to Endereco,
-    Empresa{razaoSocial} to Telefone,
-    Cliente{nome} to Endereco,
-    Cliente{nome} to Telefone,
-    Drone{codigo} to Agendamento,
-    Pedido{codigo} to Agendamento,
-    Cliente{nome} to Pedido,
-    Empresa{razaoSocial} to Pedido,
-    Endereco{enderecoCompleto} to Pedido
+ 	Empresa to Endereco{razaoSocial},
+    Empresa to Telefone,
+    Cliente to Endereco,
+    Cliente to Telefone,
+    Drone to Agendamento,
+    Pedido to Agendamento,
+    Cliente to Pedido,
+    Empresa to Pedido,
+    Endereco to Pedido
 }
 
 paginate * with pagination

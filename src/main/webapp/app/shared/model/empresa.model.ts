@@ -14,9 +14,9 @@ export interface IEmpresa {
   status?: boolean | null;
   criadoEm?: string | null;
   atualizadoEm?: string | null;
-  razaoSocials?: IEndereco[] | null;
-  razaoSocials?: ITelefone[] | null;
-  razaoSocials?: IPedido[] | null;
+  enderecos?: IEndereco[] | null;
+  telefones?: ITelefone[] | null;
+  pedidos?: IPedido[] | null;
 }
 
 export const defaultValue: Readonly<IEmpresa> = {

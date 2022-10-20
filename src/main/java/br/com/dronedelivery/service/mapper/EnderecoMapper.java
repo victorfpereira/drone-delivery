@@ -13,7 +13,7 @@ import org.mapstruct.*;
  */
 @Mapper(componentModel = "spring")
 public interface EnderecoMapper extends EntityMapper<EnderecoDTO, Endereco> {
-    @Mapping(target = "empresa", source = "empresa", qualifiedByName = "empresaId")
+    @Mapping(target = "razaoSocial", source = "razaoSocial", qualifiedByName = "empresaId")
     @Mapping(target = "cliente", source = "cliente", qualifiedByName = "clienteId")
     EnderecoDTO toDto(Endereco s);
 

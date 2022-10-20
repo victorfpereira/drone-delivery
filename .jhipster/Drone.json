@@ -45,7 +45,7 @@
     {
       "otherEntityName": "agendamento",
       "otherEntityRelationshipName": "drone",
-      "relationshipName": "codigo",
+      "relationshipName": "agendamento",
       "relationshipType": "one-to-many"
     }
   ],

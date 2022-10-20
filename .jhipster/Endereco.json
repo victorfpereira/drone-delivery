@@ -80,18 +80,18 @@
     {
       "otherEntityName": "pedido",
       "otherEntityRelationshipName": "endereco",
-      "relationshipName": "enderecoCompleto",
+      "relationshipName": "pedido",
       "relationshipType": "one-to-many"
     },
     {
       "otherEntityName": "empresa",
-      "otherEntityRelationshipName": "razaoSocial",
-      "relationshipName": "empresa",
+      "otherEntityRelationshipName": "endereco",
+      "relationshipName": "razaoSocial",
       "relationshipType": "many-to-one"
     },
     {
       "otherEntityName": "cliente",
-      "otherEntityRelationshipName": "nome",
+      "otherEntityRelationshipName": "endereco",
       "relationshipName": "cliente",
       "relationshipType": "many-to-one"
     }

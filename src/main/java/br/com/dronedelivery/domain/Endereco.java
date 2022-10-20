@@ -77,15 +77,15 @@ public class Endereco implements Serializable {
 
     @OneToMany(mappedBy = "endereco")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    @JsonIgnoreProperties(value = { "codigos", "cliente", "empresa", "endereco" }, allowSetters = true)
-    private Set<Pedido> enderecoCompletos = new HashSet<>();
+    @JsonIgnoreProperties(value = { "agendamentos", "cliente", "empresa", "endereco" }, allowSetters = true)
+    private Set<Pedido> pedidos = new HashSet<>();
 
     @ManyToOne
-    @JsonIgnoreProperties(value = { "razaoSocials", "razaoSocials", "razaoSocials" }, allowSetters = true)
-    private Empresa empresa;
+    @JsonIgnoreProperties(value = { "enderecos", "telefones", "pedidos" }, allowSetters = true)
+    private Empresa razaoSocial;
 
     @ManyToOne
-    @JsonIgnoreProperties(value = { "nomes", "nomes", "nomes" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "enderecos", "telefones", "pedidos" }, allowSetters = true)
     private Cliente cliente;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
@@ -298,47 +298,47 @@ public class Endereco implements Serializable {
         this.atualizadoEm = atualizadoEm;
     }
 
-    public Set<Pedido> getEnderecoCompletos() {
-        return this.enderecoCompletos;
+    public Set<Pedido> getPedidos() {
+        return this.pedidos;
     }
 
-    public void setEnderecoCompletos(Set<Pedido> pedidos) {
-        if (this.enderecoCompletos != null) {
-            this.enderecoCompletos.forEach(i -> i.setEndereco(null));
+    public void setPedidos(Set<Pedido> pedidos) {
+        if (this.pedidos != null) {
+            this.pedidos.forEach(i -> i.setEndereco(null));
         }
         if (pedidos != null) {
             pedidos.forEach(i -> i.setEndereco(this));
         }
-        this.enderecoCompletos = pedidos;
+        this.pedidos = pedidos;
     }
 
-    public Endereco enderecoCompletos(Set<Pedido> pedidos) {
-        this.setEnderecoCompletos(pedidos);
+    public Endereco pedidos(Set<Pedido> pedidos) {
+        this.setPedidos(pedidos);
         return this;
     }
 
-    public Endereco addEnderecoCompleto(Pedido pedido) {
-        this.enderecoCompletos.add(pedido);
+    public Endereco addPedido(Pedido pedido) {
+        this.pedidos.add(pedido);
         pedido.setEndereco(this);
         return this;
     }
 
-    public Endereco removeEnderecoCompleto(Pedido pedido) {
-        this.enderecoCompletos.remove(pedido);
+    public Endereco removePedido(Pedido pedido) {
+        this.pedidos.remove(pedido);
         pedido.setEndereco(null);
         return this;
     }
 
-    public Empresa getEmpresa() {
-        return this.empresa;
+    public Empresa getRazaoSocial() {
+        return this.razaoSocial;
     }
 
-    public void setEmpresa(Empresa empresa) {
-        this.empresa = empresa;
+    public void setRazaoSocial(Empresa empresa) {
+        this.razaoSocial = empresa;
     }
 
-    public Endereco empresa(Empresa empresa) {
-        this.setEmpresa(empresa);
+    public Endereco razaoSocial(Empresa empresa) {
+        this.setRazaoSocial(empresa);
         return this;
     }
 

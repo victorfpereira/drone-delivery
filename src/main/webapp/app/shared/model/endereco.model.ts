@@ -21,8 +21,8 @@ export interface IEndereco {
   status?: boolean | null;
   criadoEm?: string | null;
   atualizadoEm?: string | null;
-  enderecoCompletos?: IPedido[] | null;
-  empresa?: IEmpresa | null;
+  pedidos?: IPedido[] | null;
+  razaoSocial?: IEmpresa | null;
   cliente?: ICliente | null;
 }
 
