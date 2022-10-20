@@ -47,13 +47,13 @@
   "relationships": [
     {
       "otherEntityName": "empresa",
-      "otherEntityRelationshipName": "razaoSocial",
+      "otherEntityRelationshipName": "telefone",
       "relationshipName": "empresa",
       "relationshipType": "many-to-one"
     },
     {
       "otherEntityName": "cliente",
-      "otherEntityRelationshipName": "nome",
+      "otherEntityRelationshipName": "telefone",
       "relationshipName": "cliente",
       "relationshipType": "many-to-one"
     }

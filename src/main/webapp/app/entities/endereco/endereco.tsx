@@ -152,7 +152,7 @@ export const Endereco = () => {
                   <Translate contentKey="dronedeliveryApp.endereco.atualizadoEm">Atualizado Em</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
                 <th>
-                  <Translate contentKey="dronedeliveryApp.endereco.empresa">Empresa</Translate> <FontAwesomeIcon icon="sort" />
+                  <Translate contentKey="dronedeliveryApp.endereco.razaoSocial">Razao Social</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
                 <th>
                   <Translate contentKey="dronedeliveryApp.endereco.cliente">Cliente</Translate> <FontAwesomeIcon icon="sort" />
@@ -187,7 +187,7 @@ export const Endereco = () => {
                   <td>
                     {endereco.atualizadoEm ? <TextFormat type="date" value={endereco.atualizadoEm} format={APP_DATE_FORMAT} /> : null}
                   </td>
-                  <td>{endereco.empresa ? <Link to={`/empresa/${endereco.empresa.id}`}>{endereco.empresa.id}</Link> : ''}</td>
+                  <td>{endereco.razaoSocial ? <Link to={`/empresa/${endereco.razaoSocial.id}`}>{endereco.razaoSocial.id}</Link> : ''}</td>
                   <td>{endereco.cliente ? <Link to={`/cliente/${endereco.cliente.id}`}>{endereco.cliente.id}</Link> : ''}</td>
                   <td className="text-end">
                     <div className="btn-group flex-btn-group-container">

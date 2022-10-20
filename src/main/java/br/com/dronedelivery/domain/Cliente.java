@@ -50,31 +50,19 @@ public class Cliente implements Serializable {
     private Instant atualizadoEm;
 
     @OneToMany(mappedBy = "cliente")
-    @OneToMany(mappedBy = "cliente")
-    @OneToMany(mappedBy = "cliente")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    @JsonIgnoreProperties(value = { "enderecoCompletos", "empresa", "cliente" }, allowSetters = true)
-    private Set<Endereco> nomes = new HashSet<>();
+    @JsonIgnoreProperties(value = { "pedidos", "razaoSocial", "cliente" }, allowSetters = true)
+    private Set<Endereco> enderecos = new HashSet<>();
 
     @OneToMany(mappedBy = "cliente")
-    @OneToMany(mappedBy = "cliente")
-    @OneToMany(mappedBy = "cliente")
-    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     @JsonIgnoreProperties(value = { "empresa", "cliente" }, allowSetters = true)
-    private Set<Telefone> nomes = new HashSet<>();
+    private Set<Telefone> telefones = new HashSet<>();
 
     @OneToMany(mappedBy = "cliente")
-    @OneToMany(mappedBy = "cliente")
-    @OneToMany(mappedBy = "cliente")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    @JsonIgnoreProperties(value = { "codigos", "cliente", "empresa", "endereco" }, allowSetters = true)
-    private Set<Pedido> nomes = new HashSet<>();
+    @JsonIgnoreProperties(value = { "agendamentos", "cliente", "empresa", "endereco" }, allowSetters = true)
+    private Set<Pedido> pedidos = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
@@ -169,95 +157,95 @@ public class Cliente implements Serializable {
         this.atualizadoEm = atualizadoEm;
     }
 
-    public Set<Endereco> getNomes() {
-        return this.nomes;
+    public Set<Endereco> getEnderecos() {
+        return this.enderecos;
     }
 
-    public void setNomes(Set<Endereco> enderecos) {
-        if (this.nomes != null) {
-            this.nomes.forEach(i -> i.setCliente(null));
+    public void setEnderecos(Set<Endereco> enderecos) {
+        if (this.enderecos != null) {
+            this.enderecos.forEach(i -> i.setCliente(null));
         }
         if (enderecos != null) {
             enderecos.forEach(i -> i.setCliente(this));
         }
-        this.nomes = enderecos;
+        this.enderecos = enderecos;
     }
 
-    public Cliente nomes(Set<Endereco> enderecos) {
-        this.setNomes(enderecos);
+    public Cliente enderecos(Set<Endereco> enderecos) {
+        this.setEnderecos(enderecos);
         return this;
     }
 
-    public Cliente addNome(Endereco endereco) {
-        this.nomes.add(endereco);
+    public Cliente addEndereco(Endereco endereco) {
+        this.enderecos.add(endereco);
         endereco.setCliente(this);
         return this;
     }
 
-    public Cliente removeNome(Endereco endereco) {
-        this.nomes.remove(endereco);
+    public Cliente removeEndereco(Endereco endereco) {
+        this.enderecos.remove(endereco);
         endereco.setCliente(null);
         return this;
     }
 
-    public Set<Telefone> getNomes() {
-        return this.nomes;
+    public Set<Telefone> getTelefones() {
+        return this.telefones;
     }
 
-    public void setNomes(Set<Telefone> telefones) {
-        if (this.nomes != null) {
-            this.nomes.forEach(i -> i.setCliente(null));
+    public void setTelefones(Set<Telefone> telefones) {
+        if (this.telefones != null) {
+            this.telefones.forEach(i -> i.setCliente(null));
         }
         if (telefones != null) {
             telefones.forEach(i -> i.setCliente(this));
         }
-        this.nomes = telefones;
+        this.telefones = telefones;
     }
 
-    public Cliente nomes(Set<Telefone> telefones) {
-        this.setNomes(telefones);
+    public Cliente telefones(Set<Telefone> telefones) {
+        this.setTelefones(telefones);
         return this;
     }
 
-    public Cliente addNome(Telefone telefone) {
-        this.nomes.add(telefone);
+    public Cliente addTelefone(Telefone telefone) {
+        this.telefones.add(telefone);
         telefone.setCliente(this);
         return this;
     }
 
-    public Cliente removeNome(Telefone telefone) {
-        this.nomes.remove(telefone);
+    public Cliente removeTelefone(Telefone telefone) {
+        this.telefones.remove(telefone);
         telefone.setCliente(null);
         return this;
     }
 
-    public Set<Pedido> getNomes() {
-        return this.nomes;
+    public Set<Pedido> getPedidos() {
+        return this.pedidos;
     }
 
-    public void setNomes(Set<Pedido> pedidos) {
-        if (this.nomes != null) {
-            this.nomes.forEach(i -> i.setCliente(null));
+    public void setPedidos(Set<Pedido> pedidos) {
+        if (this.pedidos != null) {
+            this.pedidos.forEach(i -> i.setCliente(null));
         }
         if (pedidos != null) {
             pedidos.forEach(i -> i.setCliente(this));
         }
-        this.nomes = pedidos;
+        this.pedidos = pedidos;
     }
 
-    public Cliente nomes(Set<Pedido> pedidos) {
-        this.setNomes(pedidos);
+    public Cliente pedidos(Set<Pedido> pedidos) {
+        this.setPedidos(pedidos);
         return this;
     }
 
-    public Cliente addNome(Pedido pedido) {
-        this.nomes.add(pedido);
+    public Cliente addPedido(Pedido pedido) {
+        this.pedidos.add(pedido);
         pedido.setCliente(this);
         return this;
     }
 
-    public Cliente removeNome(Pedido pedido) {
-        this.nomes.remove(pedido);
+    public Cliente removePedido(Pedido pedido) {
+        this.pedidos.remove(pedido);
         pedido.setCliente(null);
         return this;
     }

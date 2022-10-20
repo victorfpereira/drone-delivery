@@ -54,20 +54,20 @@
   "relationships": [
     {
       "otherEntityName": "endereco",
-      "otherEntityRelationshipName": "empresa",
-      "relationshipName": "razaoSocial",
+      "otherEntityRelationshipName": "razaoSocial",
+      "relationshipName": "endereco",
       "relationshipType": "one-to-many"
     },
     {
       "otherEntityName": "telefone",
       "otherEntityRelationshipName": "empresa",
-      "relationshipName": "razaoSocial",
+      "relationshipName": "telefone",
       "relationshipType": "one-to-many"
     },
     {
       "otherEntityName": "pedido",
       "otherEntityRelationshipName": "empresa",
-      "relationshipName": "razaoSocial",
+      "relationshipName": "pedido",
       "relationshipType": "one-to-many"
     }
   ],

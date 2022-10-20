@@ -12,7 +12,7 @@ export interface IPedido {
   statusPedido?: StatusPedido | null;
   criadoEm?: string | null;
   atualizadoEm?: string | null;
-  codigos?: IAgendamento[] | null;
+  agendamentos?: IAgendamento[] | null;
   cliente?: ICliente | null;
   empresa?: IEmpresa | null;
   endereco?: IEndereco | null;

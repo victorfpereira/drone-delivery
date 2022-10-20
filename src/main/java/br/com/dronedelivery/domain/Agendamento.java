@@ -41,11 +41,11 @@ public class Agendamento implements Serializable {
     private Instant atualizadoEm;
 
     @ManyToOne
-    @JsonIgnoreProperties(value = { "codigos" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "agendamentos" }, allowSetters = true)
     private Drone drone;
 
     @ManyToOne
-    @JsonIgnoreProperties(value = { "codigos", "cliente", "empresa", "endereco" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "agendamentos", "cliente", "empresa", "endereco" }, allowSetters = true)
     private Pedido pedido;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here

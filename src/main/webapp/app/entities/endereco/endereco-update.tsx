@@ -60,7 +60,7 @@ export const EnderecoUpdate = () => {
     const entity = {
       ...enderecoEntity,
       ...values,
-      empresa: empresas.find(it => it.id.toString() === values.empresa.toString()),
+      razaoSocial: empresas.find(it => it.id.toString() === values.razaoSocial.toString()),
       cliente: clientes.find(it => it.id.toString() === values.cliente.toString()),
     };
 
@@ -82,7 +82,7 @@ export const EnderecoUpdate = () => {
           ...enderecoEntity,
           criadoEm: convertDateTimeFromServer(enderecoEntity.criadoEm),
           atualizadoEm: convertDateTimeFromServer(enderecoEntity.atualizadoEm),
-          empresa: enderecoEntity?.empresa?.id,
+          razaoSocial: enderecoEntity?.razaoSocial?.id,
           cliente: enderecoEntity?.cliente?.id,
         };
 
@@ -214,10 +214,10 @@ export const EnderecoUpdate = () => {
                 placeholder="YYYY-MM-DD HH:mm"
               />
               <ValidatedField
-                id="endereco-empresa"
-                name="empresa"
-                data-cy="empresa"
-                label={translate('dronedeliveryApp.endereco.empresa')}
+                id="endereco-razaoSocial"
+                name="razaoSocial"
+                data-cy="razaoSocial"
+                label={translate('dronedeliveryApp.endereco.razaoSocial')}
                 type="select"
               >
                 <option value="" key="0" />

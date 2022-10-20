@@ -35,13 +35,13 @@
   "relationships": [
     {
       "otherEntityName": "drone",
-      "otherEntityRelationshipName": "codigo",
+      "otherEntityRelationshipName": "agendamento",
       "relationshipName": "drone",
       "relationshipType": "many-to-one"
     },
     {
       "otherEntityName": "pedido",
-      "otherEntityRelationshipName": "codigo",
+      "otherEntityRelationshipName": "agendamento",
       "relationshipName": "pedido",
       "relationshipType": "many-to-one"
     }

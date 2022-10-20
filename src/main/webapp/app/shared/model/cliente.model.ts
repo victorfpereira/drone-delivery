@@ -11,9 +11,9 @@ export interface ICliente {
   status?: boolean | null;
   criadoEm?: string | null;
   atualizadoEm?: string | null;
-  nomes?: IEndereco[] | null;
-  nomes?: ITelefone[] | null;
-  nomes?: IPedido[] | null;
+  enderecos?: IEndereco[] | null;
+  telefones?: ITelefone[] | null;
+  pedidos?: IPedido[] | null;
 }
 
 export const defaultValue: Readonly<ICliente> = {

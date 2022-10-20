@@ -125,9 +125,9 @@ export const EnderecoDetail = () => {
             {enderecoEntity.atualizadoEm ? <TextFormat value={enderecoEntity.atualizadoEm} type="date" format={APP_DATE_FORMAT} /> : null}
           </dd>
           <dt>
-            <Translate contentKey="dronedeliveryApp.endereco.empresa">Empresa</Translate>
+            <Translate contentKey="dronedeliveryApp.endereco.razaoSocial">Razao Social</Translate>
           </dt>
-          <dd>{enderecoEntity.empresa ? enderecoEntity.empresa.id : ''}</dd>
+          <dd>{enderecoEntity.razaoSocial ? enderecoEntity.razaoSocial.id : ''}</dd>
           <dt>
             <Translate contentKey="dronedeliveryApp.endereco.cliente">Cliente</Translate>
           </dt>

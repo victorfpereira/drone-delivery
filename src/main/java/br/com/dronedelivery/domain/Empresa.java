@@ -57,32 +57,20 @@ public class Empresa implements Serializable {
     @Column(name = "atualizado_em")
     private Instant atualizadoEm;
 
-    @OneToMany(mappedBy = "empresa")
-    @OneToMany(mappedBy = "empresa")
-    @OneToMany(mappedBy = "empresa")
+    @OneToMany(mappedBy = "razaoSocial")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    @JsonIgnoreProperties(value = { "enderecoCompletos", "empresa", "cliente" }, allowSetters = true)
-    private Set<Endereco> razaoSocials = new HashSet<>();
+    @JsonIgnoreProperties(value = { "pedidos", "razaoSocial", "cliente" }, allowSetters = true)
+    private Set<Endereco> enderecos = new HashSet<>();
 
     @OneToMany(mappedBy = "empresa")
-    @OneToMany(mappedBy = "empresa")
-    @OneToMany(mappedBy = "empresa")
-    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     @JsonIgnoreProperties(value = { "empresa", "cliente" }, allowSetters = true)
-    private Set<Telefone> razaoSocials = new HashSet<>();
+    private Set<Telefone> telefones = new HashSet<>();
 
     @OneToMany(mappedBy = "empresa")
-    @OneToMany(mappedBy = "empresa")
-    @OneToMany(mappedBy = "empresa")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    @JsonIgnoreProperties(value = { "codigos", "cliente", "empresa", "endereco" }, allowSetters = true)
-    private Set<Pedido> razaoSocials = new HashSet<>();
+    @JsonIgnoreProperties(value = { "agendamentos", "cliente", "empresa", "endereco" }, allowSetters = true)
+    private Set<Pedido> pedidos = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
@@ -203,95 +191,95 @@ public class Empresa implements Serializable {
         this.atualizadoEm = atualizadoEm;
     }
 
-    public Set<Endereco> getRazaoSocials() {
-        return this.razaoSocials;
+    public Set<Endereco> getEnderecos() {
+        return this.enderecos;
     }
 
-    public void setRazaoSocials(Set<Endereco> enderecos) {
-        if (this.razaoSocials != null) {
-            this.razaoSocials.forEach(i -> i.setEmpresa(null));
+    public void setEnderecos(Set<Endereco> enderecos) {
+        if (this.enderecos != null) {
+            this.enderecos.forEach(i -> i.setRazaoSocial(null));
         }
         if (enderecos != null) {
-            enderecos.forEach(i -> i.setEmpresa(this));
+            enderecos.forEach(i -> i.setRazaoSocial(this));
         }
-        this.razaoSocials = enderecos;
+        this.enderecos = enderecos;
     }
 
-    public Empresa razaoSocials(Set<Endereco> enderecos) {
-        this.setRazaoSocials(enderecos);
+    public Empresa enderecos(Set<Endereco> enderecos) {
+        this.setEnderecos(enderecos);
         return this;
     }
 
-    public Empresa addRazaoSocial(Endereco endereco) {
-        this.razaoSocials.add(endereco);
-        endereco.setEmpresa(this);
+    public Empresa addEndereco(Endereco endereco) {
+        this.enderecos.add(endereco);
+        endereco.setRazaoSocial(this);
         return this;
     }
 
-    public Empresa removeRazaoSocial(Endereco endereco) {
-        this.razaoSocials.remove(endereco);
-        endereco.setEmpresa(null);
+    public Empresa removeEndereco(Endereco endereco) {
+        this.enderecos.remove(endereco);
+        endereco.setRazaoSocial(null);
         return this;
     }
 
-    public Set<Telefone> getRazaoSocials() {
-        return this.razaoSocials;
+    public Set<Telefone> getTelefones() {
+        return this.telefones;
     }
 
-    public void setRazaoSocials(Set<Telefone> telefones) {
-        if (this.razaoSocials != null) {
-            this.razaoSocials.forEach(i -> i.setEmpresa(null));
+    public void setTelefones(Set<Telefone> telefones) {
+        if (this.telefones != null) {
+            this.telefones.forEach(i -> i.setEmpresa(null));
         }
         if (telefones != null) {
             telefones.forEach(i -> i.setEmpresa(this));
         }
-        this.razaoSocials = telefones;
+        this.telefones = telefones;
     }
 
-    public Empresa razaoSocials(Set<Telefone> telefones) {
-        this.setRazaoSocials(telefones);
+    public Empresa telefones(Set<Telefone> telefones) {
+        this.setTelefones(telefones);
         return this;
     }
 
-    public Empresa addRazaoSocial(Telefone telefone) {
-        this.razaoSocials.add(telefone);
+    public Empresa addTelefone(Telefone telefone) {
+        this.telefones.add(telefone);
         telefone.setEmpresa(this);
         return this;
     }
 
-    public Empresa removeRazaoSocial(Telefone telefone) {
-        this.razaoSocials.remove(telefone);
+    public Empresa removeTelefone(Telefone telefone) {
+        this.telefones.remove(telefone);
         telefone.setEmpresa(null);
         return this;
     }
 
-    public Set<Pedido> getRazaoSocials() {
-        return this.razaoSocials;
+    public Set<Pedido> getPedidos() {
+        return this.pedidos;
     }
 
-    public void setRazaoSocials(Set<Pedido> pedidos) {
-        if (this.razaoSocials != null) {
-            this.razaoSocials.forEach(i -> i.setEmpresa(null));
+    public void setPedidos(Set<Pedido> pedidos) {
+        if (this.pedidos != null) {
+            this.pedidos.forEach(i -> i.setEmpresa(null));
         }
         if (pedidos != null) {
             pedidos.forEach(i -> i.setEmpresa(this));
         }
-        this.razaoSocials = pedidos;
+        this.pedidos = pedidos;
     }
 
-    public Empresa razaoSocials(Set<Pedido> pedidos) {
-        this.setRazaoSocials(pedidos);
+    public Empresa pedidos(Set<Pedido> pedidos) {
+        this.setPedidos(pedidos);
         return this;
     }
 
-    public Empresa addRazaoSocial(Pedido pedido) {
-        this.razaoSocials.add(pedido);
+    public Empresa addPedido(Pedido pedido) {
+        this.pedidos.add(pedido);
         pedido.setEmpresa(this);
         return this;
     }
 
-    public Empresa removeRazaoSocial(Pedido pedido) {
-        this.razaoSocials.remove(pedido);
+    public Empresa removePedido(Pedido pedido) {
+        this.pedidos.remove(pedido);
         pedido.setEmpresa(null);
         return this;
     }

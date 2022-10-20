@@ -49,18 +49,18 @@ public class Pedido implements Serializable {
     @OneToMany(mappedBy = "pedido")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     @JsonIgnoreProperties(value = { "drone", "pedido" }, allowSetters = true)
-    private Set<Agendamento> codigos = new HashSet<>();
+    private Set<Agendamento> agendamentos = new HashSet<>();
 
     @ManyToOne
-    @JsonIgnoreProperties(value = { "nomes", "nomes", "nomes" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "enderecos", "telefones", "pedidos" }, allowSetters = true)
     private Cliente cliente;
 
     @ManyToOne
-    @JsonIgnoreProperties(value = { "razaoSocials", "razaoSocials", "razaoSocials" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "enderecos", "telefones", "pedidos" }, allowSetters = true)
     private Empresa empresa;
 
     @ManyToOne
-    @JsonIgnoreProperties(value = { "enderecoCompletos", "empresa", "cliente" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "pedidos", "razaoSocial", "cliente" }, allowSetters = true)
     private Endereco endereco;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
@@ -143,33 +143,33 @@ public class Pedido implements Serializable {
         this.atualizadoEm = atualizadoEm;
     }
 
-    public Set<Agendamento> getCodigos() {
-        return this.codigos;
+    public Set<Agendamento> getAgendamentos() {
+        return this.agendamentos;
     }
 
-    public void setCodigos(Set<Agendamento> agendamentos) {
-        if (this.codigos != null) {
-            this.codigos.forEach(i -> i.setPedido(null));
+    public void setAgendamentos(Set<Agendamento> agendamentos) {
+        if (this.agendamentos != null) {
+            this.agendamentos.forEach(i -> i.setPedido(null));
         }
         if (agendamentos != null) {
             agendamentos.forEach(i -> i.setPedido(this));
         }
-        this.codigos = agendamentos;
+        this.agendamentos = agendamentos;
     }
 
-    public Pedido codigos(Set<Agendamento> agendamentos) {
-        this.setCodigos(agendamentos);
+    public Pedido agendamentos(Set<Agendamento> agendamentos) {
+        this.setAgendamentos(agendamentos);
         return this;
     }
 
-    public Pedido addCodigo(Agendamento agendamento) {
-        this.codigos.add(agendamento);
+    public Pedido addAgendamento(Agendamento agendamento) {
+        this.agendamentos.add(agendamento);
         agendamento.setPedido(this);
         return this;
     }
 
-    public Pedido removeCodigo(Agendamento agendamento) {
-        this.codigos.remove(agendamento);
+    public Pedido removeAgendamento(Agendamento agendamento) {
+        this.agendamentos.remove(agendamento);
         agendamento.setPedido(null);
         return this;
     }

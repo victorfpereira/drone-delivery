@@ -46,19 +46,19 @@
     {
       "otherEntityName": "endereco",
       "otherEntityRelationshipName": "cliente",
-      "relationshipName": "nome",
+      "relationshipName": "endereco",
       "relationshipType": "one-to-many"
     },
     {
       "otherEntityName": "telefone",
       "otherEntityRelationshipName": "cliente",
-      "relationshipName": "nome",
+      "relationshipName": "telefone",
       "relationshipType": "one-to-many"
     },
     {
       "otherEntityName": "pedido",
       "otherEntityRelationshipName": "cliente",
-      "relationshipName": "nome",
+      "relationshipName": "pedido",
       "relationshipType": "one-to-many"
     }
   ],
