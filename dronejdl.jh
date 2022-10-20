@@ -13,9 +13,9 @@ application {
 
 entity Empresa {
 	id UUID,
-    razaoSocial String required,
+    razaoSocial String,
     nomeFantasia String,
-    documento Integer required unique min(14) max(14),
+    documento Integer unique min(14) max(14),
     email String,
     tipoEmpresa TipoEmpresa,
     status Boolean,
@@ -25,8 +25,8 @@ entity Empresa {
 
 entity Cliente {
 	id UUID,
-    nome String required,
-    documento Integer required unique min(11) max(11),
+    nome String,
+    documento Integer unique min(11) max(11),
     email String,
     status Boolean,
     criadoEm Instant,
@@ -35,8 +35,8 @@ entity Cliente {
 
 entity Drone {
 	id UUID,
-    codigo String required unique,
-    nome String required,
+    codigo String unique,
+    nome String,
     descricao String,
     statusDrone StatusDrone,
     criadoEm Instant,
@@ -45,12 +45,12 @@ entity Drone {
 
 entity Endereco {
 	id UUID,
-	rua String required,
-    numero Integer required,
-    bairro String required,
-    cidade String required,
-    estado String required,
-    cep String required,
+	rua String,
+    numero Integer,
+    bairro String,
+    cidade String,
+    estado String,
+    cep String,
     complemento String,
     referencia String,
     enderecoCompleto String,
@@ -64,8 +64,8 @@ entity Endereco {
 
 entity Telefone {
 	id UUID,
-    ddd Integer required max(2),
-    numero Long required max(9)
+    ddd Integer max(2),
+    numero Long max(9)
     tipoTelefone TipoTelefone,
     status Boolean,
     criadoEm Instant,
@@ -74,8 +74,8 @@ entity Telefone {
 
 entity Pedido {
 	id UUID,
-    codigo Long required unique,
-    notaFiscal Long required,
+    codigo Long unique,
+    notaFiscal Long,
     statusPedido StatusPedido,
     criadoEm Instant,
     atualizadoEm Instant
