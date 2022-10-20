@@ -149,42 +149,6 @@ class ClienteResourceIT {
 
     @Test
     @Transactional
-    void checkNomeIsRequired() throws Exception {
-        int databaseSizeBeforeTest = clienteRepository.findAll().size();
-        // set the field null
-        cliente.setNome(null);
-
-        // Create the Cliente, which fails.
-        ClienteDTO clienteDTO = clienteMapper.toDto(cliente);
-
-        restClienteMockMvc
-            .perform(post(ENTITY_API_URL).contentType(MediaType.APPLICATION_JSON).content(TestUtil.convertObjectToJsonBytes(clienteDTO)))
-            .andExpect(status().isBadRequest());
-
-        List<Cliente> clienteList = clienteRepository.findAll();
-        assertThat(clienteList).hasSize(databaseSizeBeforeTest);
-    }
-
-    @Test
-    @Transactional
-    void checkDocumentoIsRequired() throws Exception {
-        int databaseSizeBeforeTest = clienteRepository.findAll().size();
-        // set the field null
-        cliente.setDocumento(null);
-
-        // Create the Cliente, which fails.
-        ClienteDTO clienteDTO = clienteMapper.toDto(cliente);
-
-        restClienteMockMvc
-            .perform(post(ENTITY_API_URL).contentType(MediaType.APPLICATION_JSON).content(TestUtil.convertObjectToJsonBytes(clienteDTO)))
-            .andExpect(status().isBadRequest());
-
-        List<Cliente> clienteList = clienteRepository.findAll();
-        assertThat(clienteList).hasSize(databaseSizeBeforeTest);
-    }
-
-    @Test
-    @Transactional
     void getAllClientes() throws Exception {
         // Initialize the database
         clienteRepository.saveAndFlush(cliente);

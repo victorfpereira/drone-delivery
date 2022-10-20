@@ -12,12 +12,11 @@
     {
       "fieldName": "codigo",
       "fieldType": "String",
-      "fieldValidateRules": ["required", "unique"]
+      "fieldValidateRules": ["unique"]
     },
     {
       "fieldName": "nome",
-      "fieldType": "String",
-      "fieldValidateRules": ["required"]
+      "fieldType": "String"
     },
     {
       "fieldName": "descricao",

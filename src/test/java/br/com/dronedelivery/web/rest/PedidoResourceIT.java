@@ -144,42 +144,6 @@ class PedidoResourceIT {
 
     @Test
     @Transactional
-    void checkCodigoIsRequired() throws Exception {
-        int databaseSizeBeforeTest = pedidoRepository.findAll().size();
-        // set the field null
-        pedido.setCodigo(null);
-
-        // Create the Pedido, which fails.
-        PedidoDTO pedidoDTO = pedidoMapper.toDto(pedido);
-
-        restPedidoMockMvc
-            .perform(post(ENTITY_API_URL).contentType(MediaType.APPLICATION_JSON).content(TestUtil.convertObjectToJsonBytes(pedidoDTO)))
-            .andExpect(status().isBadRequest());
-
-        List<Pedido> pedidoList = pedidoRepository.findAll();
-        assertThat(pedidoList).hasSize(databaseSizeBeforeTest);
-    }
-
-    @Test
-    @Transactional
-    void checkNotaFiscalIsRequired() throws Exception {
-        int databaseSizeBeforeTest = pedidoRepository.findAll().size();
-        // set the field null
-        pedido.setNotaFiscal(null);
-
-        // Create the Pedido, which fails.
-        PedidoDTO pedidoDTO = pedidoMapper.toDto(pedido);
-
-        restPedidoMockMvc
-            .perform(post(ENTITY_API_URL).contentType(MediaType.APPLICATION_JSON).content(TestUtil.convertObjectToJsonBytes(pedidoDTO)))
-            .andExpect(status().isBadRequest());
-
-        List<Pedido> pedidoList = pedidoRepository.findAll();
-        assertThat(pedidoList).hasSize(databaseSizeBeforeTest);
-    }
-
-    @Test
-    @Transactional
     void getAllPedidos() throws Exception {
         // Initialize the database
         pedidoRepository.saveAndFlush(pedido);

@@ -6,12 +6,12 @@ import { TipoEndereco } from 'app/shared/model/enumerations/tipo-endereco.model'
 
 export interface IEndereco {
   id?: string;
-  rua?: string;
-  numero?: number;
-  bairro?: string;
-  cidade?: string;
-  estado?: string;
-  cep?: string;
+  rua?: string | null;
+  numero?: number | null;
+  bairro?: string | null;
+  cidade?: string | null;
+  estado?: string | null;
+  cep?: string | null;
   complemento?: string | null;
   referencia?: string | null;
   enderecoCompleto?: string | null;

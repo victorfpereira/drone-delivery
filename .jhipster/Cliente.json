@@ -11,13 +11,12 @@
     },
     {
       "fieldName": "nome",
-      "fieldType": "String",
-      "fieldValidateRules": ["required"]
+      "fieldType": "String"
     },
     {
       "fieldName": "documento",
       "fieldType": "Integer",
-      "fieldValidateRules": ["required", "unique", "min", "max"],
+      "fieldValidateRules": ["unique", "min", "max"],
       "fieldValidateRulesMax": "11",
       "fieldValidateRulesMin": "11"
     },

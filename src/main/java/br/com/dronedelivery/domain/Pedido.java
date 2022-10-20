@@ -30,12 +30,10 @@ public class Pedido implements Serializable {
     @Column(name = "id", length = 36)
     private UUID id;
 
-    @NotNull
-    @Column(name = "codigo", nullable = false, unique = true)
+    @Column(name = "codigo", unique = true)
     private Long codigo;
 
-    @NotNull
-    @Column(name = "nota_fiscal", nullable = false)
+    @Column(name = "nota_fiscal")
     private Long notaFiscal;
 
     @Enumerated(EnumType.STRING)

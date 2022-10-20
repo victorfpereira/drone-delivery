@@ -14,10 +14,8 @@ public class ClienteDTO implements Serializable {
 
     private UUID id;
 
-    @NotNull
     private String nome;
 
-    @NotNull
     @Min(value = 11)
     @Max(value = 11)
     private Integer documento;

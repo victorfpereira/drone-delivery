@@ -95,16 +95,7 @@ export const ClienteUpdate = () => {
                   validate={{ required: true }}
                 />
               ) : null}
-              <ValidatedField
-                label={translate('dronedeliveryApp.cliente.nome')}
-                id="cliente-nome"
-                name="nome"
-                data-cy="nome"
-                type="text"
-                validate={{
-                  required: { value: true, message: translate('entity.validation.required') },
-                }}
-              />
+              <ValidatedField label={translate('dronedeliveryApp.cliente.nome')} id="cliente-nome" name="nome" data-cy="nome" type="text" />
               <ValidatedField
                 label={translate('dronedeliveryApp.cliente.documento')}
                 id="cliente-documento"
@@ -112,7 +103,6 @@ export const ClienteUpdate = () => {
                 data-cy="documento"
                 type="text"
                 validate={{
-                  required: { value: true, message: translate('entity.validation.required') },
                   min: { value: 11, message: translate('entity.validation.min', { min: 11 }) },
                   max: { value: 11, message: translate('entity.validation.max', { max: 11 }) },
                   validate: v => isNumber(v) || translate('entity.validation.number'),

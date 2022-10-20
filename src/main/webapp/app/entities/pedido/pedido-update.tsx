@@ -124,7 +124,6 @@ export const PedidoUpdate = () => {
                 data-cy="codigo"
                 type="text"
                 validate={{
-                  required: { value: true, message: translate('entity.validation.required') },
                   validate: v => isNumber(v) || translate('entity.validation.number'),
                 }}
               />
@@ -134,10 +133,6 @@ export const PedidoUpdate = () => {
                 name="notaFiscal"
                 data-cy="notaFiscal"
                 type="text"
-                validate={{
-                  required: { value: true, message: translate('entity.validation.required') },
-                  validate: v => isNumber(v) || translate('entity.validation.number'),
-                }}
               />
               <ValidatedField
                 label={translate('dronedeliveryApp.pedido.statusPedido')}

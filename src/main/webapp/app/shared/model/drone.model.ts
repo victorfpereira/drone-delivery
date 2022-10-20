@@ -4,8 +4,8 @@ import { StatusDrone } from 'app/shared/model/enumerations/status-drone.model';
 
 export interface IDrone {
   id?: string;
-  codigo?: string;
-  nome?: string;
+  codigo?: string | null;
+  nome?: string | null;
   descricao?: string | null;
   statusDrone?: StatusDrone | null;
   criadoEm?: string | null;

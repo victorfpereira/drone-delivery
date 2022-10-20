@@ -15,10 +15,8 @@ public class PedidoDTO implements Serializable {
 
     private UUID id;
 
-    @NotNull
     private Long codigo;
 
-    @NotNull
     private Long notaFiscal;
 
     private StatusPedido statusPedido;

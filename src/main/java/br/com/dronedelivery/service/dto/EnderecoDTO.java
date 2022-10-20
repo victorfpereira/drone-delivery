@@ -5,7 +5,6 @@ import java.io.Serializable;
 import java.time.Instant;
 import java.util.Objects;
 import java.util.UUID;
-import javax.validation.constraints.*;
 
 /**
  * A DTO for the {@link br.com.dronedelivery.domain.Endereco} entity.
@@ -15,22 +14,16 @@ public class EnderecoDTO implements Serializable {
 
     private UUID id;
 
-    @NotNull
     private String rua;
 
-    @NotNull
     private Integer numero;
 
-    @NotNull
     private String bairro;
 
-    @NotNull
     private String cidade;
 
-    @NotNull
     private String estado;
 
-    @NotNull
     private String cep;
 
     private String complemento;
