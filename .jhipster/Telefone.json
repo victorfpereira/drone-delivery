@@ -12,13 +12,13 @@
     {
       "fieldName": "ddd",
       "fieldType": "Integer",
-      "fieldValidateRules": ["required", "max"],
+      "fieldValidateRules": ["max"],
       "fieldValidateRulesMax": "2"
     },
     {
       "fieldName": "numero",
       "fieldType": "Long",
-      "fieldValidateRules": ["required", "max"],
+      "fieldValidateRules": ["max"],
       "fieldValidateRulesMax": "9"
     },
     {

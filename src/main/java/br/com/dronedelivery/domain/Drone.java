@@ -30,12 +30,10 @@ public class Drone implements Serializable {
     @Column(name = "id", length = 36)
     private UUID id;
 
-    @NotNull
-    @Column(name = "codigo", nullable = false, unique = true)
+    @Column(name = "codigo", unique = true)
     private String codigo;
 
-    @NotNull
-    @Column(name = "nome", nullable = false)
+    @Column(name = "nome")
     private String nome;
 
     @Column(name = "descricao")

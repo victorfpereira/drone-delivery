@@ -7,8 +7,8 @@ import { StatusPedido } from 'app/shared/model/enumerations/status-pedido.model'
 
 export interface IPedido {
   id?: string;
-  codigo?: number;
-  notaFiscal?: number;
+  codigo?: number | null;
+  notaFiscal?: number | null;
   statusPedido?: StatusPedido | null;
   criadoEm?: string | null;
   atualizadoEm?: string | null;

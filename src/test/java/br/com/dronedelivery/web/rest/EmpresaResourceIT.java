@@ -162,42 +162,6 @@ class EmpresaResourceIT {
 
     @Test
     @Transactional
-    void checkRazaoSocialIsRequired() throws Exception {
-        int databaseSizeBeforeTest = empresaRepository.findAll().size();
-        // set the field null
-        empresa.setRazaoSocial(null);
-
-        // Create the Empresa, which fails.
-        EmpresaDTO empresaDTO = empresaMapper.toDto(empresa);
-
-        restEmpresaMockMvc
-            .perform(post(ENTITY_API_URL).contentType(MediaType.APPLICATION_JSON).content(TestUtil.convertObjectToJsonBytes(empresaDTO)))
-            .andExpect(status().isBadRequest());
-
-        List<Empresa> empresaList = empresaRepository.findAll();
-        assertThat(empresaList).hasSize(databaseSizeBeforeTest);
-    }
-
-    @Test
-    @Transactional
-    void checkDocumentoIsRequired() throws Exception {
-        int databaseSizeBeforeTest = empresaRepository.findAll().size();
-        // set the field null
-        empresa.setDocumento(null);
-
-        // Create the Empresa, which fails.
-        EmpresaDTO empresaDTO = empresaMapper.toDto(empresa);
-
-        restEmpresaMockMvc
-            .perform(post(ENTITY_API_URL).contentType(MediaType.APPLICATION_JSON).content(TestUtil.convertObjectToJsonBytes(empresaDTO)))
-            .andExpect(status().isBadRequest());
-
-        List<Empresa> empresaList = empresaRepository.findAll();
-        assertThat(empresaList).hasSize(databaseSizeBeforeTest);
-    }
-
-    @Test
-    @Transactional
     void getAllEmpresas() throws Exception {
         // Initialize the database
         empresaRepository.saveAndFlush(empresa);

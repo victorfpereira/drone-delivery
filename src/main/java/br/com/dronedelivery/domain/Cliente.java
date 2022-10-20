@@ -29,14 +29,12 @@ public class Cliente implements Serializable {
     @Column(name = "id", length = 36)
     private UUID id;
 
-    @NotNull
-    @Column(name = "nome", nullable = false)
+    @Column(name = "nome")
     private String nome;
 
-    @NotNull
     @Min(value = 11)
     @Max(value = 11)
-    @Column(name = "documento", nullable = false, unique = true)
+    @Column(name = "documento", unique = true)
     private Integer documento;
 
     @Column(name = "email")

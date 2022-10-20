@@ -15,10 +15,8 @@ public class DroneDTO implements Serializable {
 
     private UUID id;
 
-    @NotNull
     private String codigo;
 
-    @NotNull
     private String nome;
 
     private String descricao;

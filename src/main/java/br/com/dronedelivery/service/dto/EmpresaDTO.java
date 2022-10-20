@@ -15,12 +15,10 @@ public class EmpresaDTO implements Serializable {
 
     private UUID id;
 
-    @NotNull
     private String razaoSocial;
 
     private String nomeFantasia;
 
-    @NotNull
     @Min(value = 14)
     @Max(value = 14)
     private Integer documento;

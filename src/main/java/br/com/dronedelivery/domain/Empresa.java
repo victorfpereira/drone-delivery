@@ -30,17 +30,15 @@ public class Empresa implements Serializable {
     @Column(name = "id", length = 36)
     private UUID id;
 
-    @NotNull
-    @Column(name = "razao_social", nullable = false)
+    @Column(name = "razao_social")
     private String razaoSocial;
 
     @Column(name = "nome_fantasia")
     private String nomeFantasia;
 
-    @NotNull
     @Min(value = 14)
     @Max(value = 14)
-    @Column(name = "documento", nullable = false, unique = true)
+    @Column(name = "documento", unique = true)
     private Integer documento;
 
     @Column(name = "email")

@@ -5,8 +5,8 @@ import { IPedido } from 'app/shared/model/pedido.model';
 
 export interface ICliente {
   id?: string;
-  nome?: string;
-  documento?: number;
+  nome?: string | null;
+  documento?: number | null;
   email?: string | null;
   status?: boolean | null;
   criadoEm?: string | null;

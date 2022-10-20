@@ -104,20 +104,9 @@ export const DroneUpdate = () => {
                 name="codigo"
                 data-cy="codigo"
                 type="text"
-                validate={{
-                  required: { value: true, message: translate('entity.validation.required') },
-                }}
+                validate={{}}
               />
-              <ValidatedField
-                label={translate('dronedeliveryApp.drone.nome')}
-                id="drone-nome"
-                name="nome"
-                data-cy="nome"
-                type="text"
-                validate={{
-                  required: { value: true, message: translate('entity.validation.required') },
-                }}
-              />
+              <ValidatedField label={translate('dronedeliveryApp.drone.nome')} id="drone-nome" name="nome" data-cy="nome" type="text" />
               <ValidatedField
                 label={translate('dronedeliveryApp.drone.descricao')}
                 id="drone-descricao"

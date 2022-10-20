@@ -8,7 +8,6 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
 import javax.persistence.*;
-import javax.validation.constraints.*;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.hibernate.annotations.Type;
@@ -30,28 +29,22 @@ public class Endereco implements Serializable {
     @Column(name = "id", length = 36)
     private UUID id;
 
-    @NotNull
-    @Column(name = "rua", nullable = false)
+    @Column(name = "rua")
     private String rua;
 
-    @NotNull
-    @Column(name = "numero", nullable = false)
+    @Column(name = "numero")
     private Integer numero;
 
-    @NotNull
-    @Column(name = "bairro", nullable = false)
+    @Column(name = "bairro")
     private String bairro;
 
-    @NotNull
-    @Column(name = "cidade", nullable = false)
+    @Column(name = "cidade")
     private String cidade;
 
-    @NotNull
-    @Column(name = "estado", nullable = false)
+    @Column(name = "estado")
     private String estado;
 
-    @NotNull
-    @Column(name = "cep", nullable = false)
+    @Column(name = "cep")
     private String cep;
 
     @Column(name = "complemento")

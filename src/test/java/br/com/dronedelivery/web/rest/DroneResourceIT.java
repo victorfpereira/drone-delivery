@@ -150,42 +150,6 @@ class DroneResourceIT {
 
     @Test
     @Transactional
-    void checkCodigoIsRequired() throws Exception {
-        int databaseSizeBeforeTest = droneRepository.findAll().size();
-        // set the field null
-        drone.setCodigo(null);
-
-        // Create the Drone, which fails.
-        DroneDTO droneDTO = droneMapper.toDto(drone);
-
-        restDroneMockMvc
-            .perform(post(ENTITY_API_URL).contentType(MediaType.APPLICATION_JSON).content(TestUtil.convertObjectToJsonBytes(droneDTO)))
-            .andExpect(status().isBadRequest());
-
-        List<Drone> droneList = droneRepository.findAll();
-        assertThat(droneList).hasSize(databaseSizeBeforeTest);
-    }
-
-    @Test
-    @Transactional
-    void checkNomeIsRequired() throws Exception {
-        int databaseSizeBeforeTest = droneRepository.findAll().size();
-        // set the field null
-        drone.setNome(null);
-
-        // Create the Drone, which fails.
-        DroneDTO droneDTO = droneMapper.toDto(drone);
-
-        restDroneMockMvc
-            .perform(post(ENTITY_API_URL).contentType(MediaType.APPLICATION_JSON).content(TestUtil.convertObjectToJsonBytes(droneDTO)))
-            .andExpect(status().isBadRequest());
-
-        List<Drone> droneList = droneRepository.findAll();
-        assertThat(droneList).hasSize(databaseSizeBeforeTest);
-    }
-
-    @Test
-    @Transactional
     void getAllDrones() throws Exception {
         // Initialize the database
         droneRepository.saveAndFlush(drone);

@@ -15,10 +15,10 @@
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="codigo" type="bigint">
-                <constraints nullable="false" unique="true" uniqueConstraintName="ux_pedido__codigo" />
+                <constraints nullable="true" unique="true" uniqueConstraintName="ux_pedido__codigo" />
             </column>
             <column name="nota_fiscal" type="bigint">
-                <constraints nullable="false" />
+                <constraints nullable="true" />
             </column>
             <column name="status_pedido" type="varchar(255)">
                 <constraints nullable="true" />

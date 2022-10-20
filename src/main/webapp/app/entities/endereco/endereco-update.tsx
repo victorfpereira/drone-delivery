@@ -111,26 +111,13 @@ export const EnderecoUpdate = () => {
                   validate={{ required: true }}
                 />
               ) : null}
-              <ValidatedField
-                label={translate('dronedeliveryApp.endereco.rua')}
-                id="endereco-rua"
-                name="rua"
-                data-cy="rua"
-                type="text"
-                validate={{
-                  required: { value: true, message: translate('entity.validation.required') },
-                }}
-              />
+              <ValidatedField label={translate('dronedeliveryApp.endereco.rua')} id="endereco-rua" name="rua" data-cy="rua" type="text" />
               <ValidatedField
                 label={translate('dronedeliveryApp.endereco.numero')}
                 id="endereco-numero"
                 name="numero"
                 data-cy="numero"
                 type="text"
-                validate={{
-                  required: { value: true, message: translate('entity.validation.required') },
-                  validate: v => isNumber(v) || translate('entity.validation.number'),
-                }}
               />
               <ValidatedField
                 label={translate('dronedeliveryApp.endereco.bairro')}
@@ -138,9 +125,6 @@ export const EnderecoUpdate = () => {
                 name="bairro"
                 data-cy="bairro"
                 type="text"
-                validate={{
-                  required: { value: true, message: translate('entity.validation.required') },
-                }}
               />
               <ValidatedField
                 label={translate('dronedeliveryApp.endereco.cidade')}
@@ -148,9 +132,6 @@ export const EnderecoUpdate = () => {
                 name="cidade"
                 data-cy="cidade"
                 type="text"
-                validate={{
-                  required: { value: true, message: translate('entity.validation.required') },
-                }}
               />
               <ValidatedField
                 label={translate('dronedeliveryApp.endereco.estado')}
@@ -158,20 +139,8 @@ export const EnderecoUpdate = () => {
                 name="estado"
                 data-cy="estado"
                 type="text"
-                validate={{
-                  required: { value: true, message: translate('entity.validation.required') },
-                }}
               />
-              <ValidatedField
-                label={translate('dronedeliveryApp.endereco.cep')}
-                id="endereco-cep"
-                name="cep"
-                data-cy="cep"
-                type="text"
-                validate={{
-                  required: { value: true, message: translate('entity.validation.required') },
-                }}
-              />
+              <ValidatedField label={translate('dronedeliveryApp.endereco.cep')} id="endereco-cep" name="cep" data-cy="cep" type="text" />
               <ValidatedField
                 label={translate('dronedeliveryApp.endereco.complemento')}
                 id="endereco-complemento"

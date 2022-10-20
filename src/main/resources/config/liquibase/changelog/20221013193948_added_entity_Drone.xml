@@ -15,10 +15,10 @@
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="codigo" type="varchar(255)">
-                <constraints nullable="false" unique="true" uniqueConstraintName="ux_drone__codigo" />
+                <constraints nullable="true" unique="true" uniqueConstraintName="ux_drone__codigo" />
             </column>
             <column name="nome" type="varchar(255)">
-                <constraints nullable="false" />
+                <constraints nullable="true" />
             </column>
             <column name="descricao" type="varchar(255)">
                 <constraints nullable="true" />

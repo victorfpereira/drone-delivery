@@ -6,9 +6,9 @@ import { TipoEmpresa } from 'app/shared/model/enumerations/tipo-empresa.model';
 
 export interface IEmpresa {
   id?: string;
-  razaoSocial?: string;
+  razaoSocial?: string | null;
   nomeFantasia?: string | null;
-  documento?: number;
+  documento?: number | null;
   email?: string | null;
   tipoEmpresa?: TipoEmpresa | null;
   status?: boolean | null;

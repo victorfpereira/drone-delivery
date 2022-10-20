@@ -12,12 +12,11 @@
     {
       "fieldName": "codigo",
       "fieldType": "Long",
-      "fieldValidateRules": ["required", "unique"]
+      "fieldValidateRules": ["unique"]
     },
     {
       "fieldName": "notaFiscal",
-      "fieldType": "Long",
-      "fieldValidateRules": ["required"]
+      "fieldType": "Long"
     },
     {
       "fieldName": "statusPedido",

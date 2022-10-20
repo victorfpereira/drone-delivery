@@ -150,42 +150,6 @@ class TelefoneResourceIT {
 
     @Test
     @Transactional
-    void checkDddIsRequired() throws Exception {
-        int databaseSizeBeforeTest = telefoneRepository.findAll().size();
-        // set the field null
-        telefone.setDdd(null);
-
-        // Create the Telefone, which fails.
-        TelefoneDTO telefoneDTO = telefoneMapper.toDto(telefone);
-
-        restTelefoneMockMvc
-            .perform(post(ENTITY_API_URL).contentType(MediaType.APPLICATION_JSON).content(TestUtil.convertObjectToJsonBytes(telefoneDTO)))
-            .andExpect(status().isBadRequest());
-
-        List<Telefone> telefoneList = telefoneRepository.findAll();
-        assertThat(telefoneList).hasSize(databaseSizeBeforeTest);
-    }
-
-    @Test
-    @Transactional
-    void checkNumeroIsRequired() throws Exception {
-        int databaseSizeBeforeTest = telefoneRepository.findAll().size();
-        // set the field null
-        telefone.setNumero(null);
-
-        // Create the Telefone, which fails.
-        TelefoneDTO telefoneDTO = telefoneMapper.toDto(telefone);
-
-        restTelefoneMockMvc
-            .perform(post(ENTITY_API_URL).contentType(MediaType.APPLICATION_JSON).content(TestUtil.convertObjectToJsonBytes(telefoneDTO)))
-            .andExpect(status().isBadRequest());
-
-        List<Telefone> telefoneList = telefoneRepository.findAll();
-        assertThat(telefoneList).hasSize(databaseSizeBeforeTest);
-    }
-
-    @Test
-    @Transactional
     void getAllTelefones() throws Exception {
         // Initialize the database
         telefoneRepository.saveAndFlush(telefone);
