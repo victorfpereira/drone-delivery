@@ -45,6 +45,12 @@ export const EmpresaDetail = () => {
           </dt>
           <dd>{empresaEntity.nomeFantasia}</dd>
           <dt>
+            <span id="inscricaoEstadual">
+              <Translate contentKey="dronedeliveryApp.empresa.inscricaoEstadual">Inscricao Estadual</Translate>
+            </span>
+          </dt>
+          <dd>{empresaEntity.inscricaoEstadual}</dd>
+          <dt>
             <span id="documento">
               <Translate contentKey="dronedeliveryApp.empresa.documento">Documento</Translate>
             </span>

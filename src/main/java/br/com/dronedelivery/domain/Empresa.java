@@ -36,9 +36,12 @@ public class Empresa implements Serializable {
     @Column(name = "nome_fantasia")
     private String nomeFantasia;
 
+    @Column(name = "inscricao_estadual")
+    private String inscricaoEstadual;
+
     @Min(value = 14)
     @Max(value = 14)
-    @Column(name = "documento", unique = true)
+    @Column(name = "documento")
     private Integer documento;
 
     @Column(name = "email")
@@ -57,9 +60,9 @@ public class Empresa implements Serializable {
     @Column(name = "atualizado_em")
     private Instant atualizadoEm;
 
-    @OneToMany(mappedBy = "razaoSocial")
+    @OneToMany(mappedBy = "empresa")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    @JsonIgnoreProperties(value = { "pedidos", "razaoSocial", "cliente" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "pedidos", "empresa", "cliente" }, allowSetters = true)
     private Set<Endereco> enderecos = new HashSet<>();
 
     @OneToMany(mappedBy = "empresa")
@@ -111,6 +114,19 @@ public class Empresa implements Serializable {
 
     public void setNomeFantasia(String nomeFantasia) {
         this.nomeFantasia = nomeFantasia;
+    }
+
+    public String getInscricaoEstadual() {
+        return this.inscricaoEstadual;
+    }
+
+    public Empresa inscricaoEstadual(String inscricaoEstadual) {
+        this.setInscricaoEstadual(inscricaoEstadual);
+        return this;
+    }
+
+    public void setInscricaoEstadual(String inscricaoEstadual) {
+        this.inscricaoEstadual = inscricaoEstadual;
     }
 
     public Integer getDocumento() {
@@ -197,10 +213,10 @@ public class Empresa implements Serializable {
 
     public void setEnderecos(Set<Endereco> enderecos) {
         if (this.enderecos != null) {
-            this.enderecos.forEach(i -> i.setRazaoSocial(null));
+            this.enderecos.forEach(i -> i.setEmpresa(null));
         }
         if (enderecos != null) {
-            enderecos.forEach(i -> i.setRazaoSocial(this));
+            enderecos.forEach(i -> i.setEmpresa(this));
         }
         this.enderecos = enderecos;
     }
@@ -212,13 +228,13 @@ public class Empresa implements Serializable {
 
     public Empresa addEndereco(Endereco endereco) {
         this.enderecos.add(endereco);
-        endereco.setRazaoSocial(this);
+        endereco.setEmpresa(this);
         return this;
     }
 
     public Empresa removeEndereco(Endereco endereco) {
         this.enderecos.remove(endereco);
-        endereco.setRazaoSocial(null);
+        endereco.setEmpresa(null);
         return this;
     }
 
@@ -310,6 +326,7 @@ public class Empresa implements Serializable {
             "id=" + getId() +
             ", razaoSocial='" + getRazaoSocial() + "'" +
             ", nomeFantasia='" + getNomeFantasia() + "'" +
+            ", inscricaoEstadual='" + getInscricaoEstadual() + "'" +
             ", documento=" + getDocumento() +
             ", email='" + getEmail() + "'" +
             ", tipoEmpresa='" + getTipoEmpresa() + "'" +

@@ -44,7 +44,7 @@ public class EnderecoDTO implements Serializable {
 
     private Instant atualizadoEm;
 
-    private EmpresaDTO razaoSocial;
+    private EmpresaDTO empresa;
 
     private ClienteDTO cliente;
 
@@ -176,12 +176,12 @@ public class EnderecoDTO implements Serializable {
         this.atualizadoEm = atualizadoEm;
     }
 
-    public EmpresaDTO getRazaoSocial() {
-        return razaoSocial;
+    public EmpresaDTO getEmpresa() {
+        return empresa;
     }
 
-    public void setRazaoSocial(EmpresaDTO razaoSocial) {
-        this.razaoSocial = razaoSocial;
+    public void setEmpresa(EmpresaDTO empresa) {
+        this.empresa = empresa;
     }
 
     public ClienteDTO getCliente() {
@@ -233,7 +233,7 @@ public class EnderecoDTO implements Serializable {
             ", status='" + getStatus() + "'" +
             ", criadoEm='" + getCriadoEm() + "'" +
             ", atualizadoEm='" + getAtualizadoEm() + "'" +
-            ", razaoSocial=" + getRazaoSocial() +
+            ", empresa=" + getEmpresa() +
             ", cliente=" + getCliente() +
             "}";
     }

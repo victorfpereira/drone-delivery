@@ -15,7 +15,8 @@ entity Empresa {
 	id UUID,
     razaoSocial String,
     nomeFantasia String,
-    documento Integer unique min(14) max(14),
+    inscricaoEstadual String,
+    documento Integer min(14) max(14),
     email String,
     tipoEmpresa TipoEmpresa,
     status Boolean,
@@ -26,7 +27,7 @@ entity Empresa {
 entity Cliente {
 	id UUID,
     nome String,
-    documento Integer unique min(11) max(11),
+    documento Integer min(11) max(11),
     email String,
     status Boolean,
     criadoEm Instant,
@@ -64,8 +65,8 @@ entity Endereco {
 
 entity Telefone {
 	id UUID,
-    ddd Integer max(2),
-    numero Long max(9)
+    ddd Integer min(2) max(2),
+    numero Long min(8) max(9)
     tipoTelefone TipoTelefone,
     status Boolean,
     criadoEm Instant,
@@ -130,7 +131,7 @@ enum StatusDrone {
 }
 
 relationship OneToMany {
- 	Empresa to Endereco{razaoSocial},
+ 	Empresa to Endereco,
     Empresa to Telefone,
     Cliente to Endereco,
     Cliente to Telefone,

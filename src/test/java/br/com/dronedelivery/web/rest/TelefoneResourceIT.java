@@ -34,10 +34,10 @@ import org.springframework.transaction.annotation.Transactional;
 class TelefoneResourceIT {
 
     private static final Integer DEFAULT_DDD = 2;
-    private static final Integer UPDATED_DDD = 1;
+    private static final Integer UPDATED_DDD = 3;
 
-    private static final Long DEFAULT_NUMERO = 9L;
-    private static final Long UPDATED_NUMERO = 8L;
+    private static final Long DEFAULT_NUMERO = 8L;
+    private static final Long UPDATED_NUMERO = 9L;
 
     private static final TipoTelefone DEFAULT_TIPO_TELEFONE = TipoTelefone.FIXO;
     private static final TipoTelefone UPDATED_TIPO_TELEFONE = TipoTelefone.CELULAR;

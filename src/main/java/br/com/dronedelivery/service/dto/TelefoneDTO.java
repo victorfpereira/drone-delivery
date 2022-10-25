@@ -15,9 +15,11 @@ public class TelefoneDTO implements Serializable {
 
     private UUID id;
 
+    @Min(value = 2)
     @Max(value = 2)
     private Integer ddd;
 
+    @Min(value = 8L)
     @Max(value = 9L)
     private Long numero;
 

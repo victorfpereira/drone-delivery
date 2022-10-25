@@ -39,6 +39,9 @@ class EmpresaResourceIT {
     private static final String DEFAULT_NOME_FANTASIA = "AAAAAAAAAA";
     private static final String UPDATED_NOME_FANTASIA = "BBBBBBBBBB";
 
+    private static final String DEFAULT_INSCRICAO_ESTADUAL = "AAAAAAAAAA";
+    private static final String UPDATED_INSCRICAO_ESTADUAL = "BBBBBBBBBB";
+
     private static final Integer DEFAULT_DOCUMENTO = 14;
     private static final Integer UPDATED_DOCUMENTO = 15;
 
@@ -84,6 +87,7 @@ class EmpresaResourceIT {
         Empresa empresa = new Empresa()
             .razaoSocial(DEFAULT_RAZAO_SOCIAL)
             .nomeFantasia(DEFAULT_NOME_FANTASIA)
+            .inscricaoEstadual(DEFAULT_INSCRICAO_ESTADUAL)
             .documento(DEFAULT_DOCUMENTO)
             .email(DEFAULT_EMAIL)
             .tipoEmpresa(DEFAULT_TIPO_EMPRESA)
@@ -103,6 +107,7 @@ class EmpresaResourceIT {
         Empresa empresa = new Empresa()
             .razaoSocial(UPDATED_RAZAO_SOCIAL)
             .nomeFantasia(UPDATED_NOME_FANTASIA)
+            .inscricaoEstadual(UPDATED_INSCRICAO_ESTADUAL)
             .documento(UPDATED_DOCUMENTO)
             .email(UPDATED_EMAIL)
             .tipoEmpresa(UPDATED_TIPO_EMPRESA)
@@ -133,6 +138,7 @@ class EmpresaResourceIT {
         Empresa testEmpresa = empresaList.get(empresaList.size() - 1);
         assertThat(testEmpresa.getRazaoSocial()).isEqualTo(DEFAULT_RAZAO_SOCIAL);
         assertThat(testEmpresa.getNomeFantasia()).isEqualTo(DEFAULT_NOME_FANTASIA);
+        assertThat(testEmpresa.getInscricaoEstadual()).isEqualTo(DEFAULT_INSCRICAO_ESTADUAL);
         assertThat(testEmpresa.getDocumento()).isEqualTo(DEFAULT_DOCUMENTO);
         assertThat(testEmpresa.getEmail()).isEqualTo(DEFAULT_EMAIL);
         assertThat(testEmpresa.getTipoEmpresa()).isEqualTo(DEFAULT_TIPO_EMPRESA);
@@ -174,6 +180,7 @@ class EmpresaResourceIT {
             .andExpect(jsonPath("$.[*].id").value(hasItem(empresa.getId().toString())))
             .andExpect(jsonPath("$.[*].razaoSocial").value(hasItem(DEFAULT_RAZAO_SOCIAL)))
             .andExpect(jsonPath("$.[*].nomeFantasia").value(hasItem(DEFAULT_NOME_FANTASIA)))
+            .andExpect(jsonPath("$.[*].inscricaoEstadual").value(hasItem(DEFAULT_INSCRICAO_ESTADUAL)))
             .andExpect(jsonPath("$.[*].documento").value(hasItem(DEFAULT_DOCUMENTO)))
             .andExpect(jsonPath("$.[*].email").value(hasItem(DEFAULT_EMAIL)))
             .andExpect(jsonPath("$.[*].tipoEmpresa").value(hasItem(DEFAULT_TIPO_EMPRESA.toString())))
@@ -196,6 +203,7 @@ class EmpresaResourceIT {
             .andExpect(jsonPath("$.id").value(empresa.getId().toString()))
             .andExpect(jsonPath("$.razaoSocial").value(DEFAULT_RAZAO_SOCIAL))
             .andExpect(jsonPath("$.nomeFantasia").value(DEFAULT_NOME_FANTASIA))
+            .andExpect(jsonPath("$.inscricaoEstadual").value(DEFAULT_INSCRICAO_ESTADUAL))
             .andExpect(jsonPath("$.documento").value(DEFAULT_DOCUMENTO))
             .andExpect(jsonPath("$.email").value(DEFAULT_EMAIL))
             .andExpect(jsonPath("$.tipoEmpresa").value(DEFAULT_TIPO_EMPRESA.toString()))
@@ -226,6 +234,7 @@ class EmpresaResourceIT {
         updatedEmpresa
             .razaoSocial(UPDATED_RAZAO_SOCIAL)
             .nomeFantasia(UPDATED_NOME_FANTASIA)
+            .inscricaoEstadual(UPDATED_INSCRICAO_ESTADUAL)
             .documento(UPDATED_DOCUMENTO)
             .email(UPDATED_EMAIL)
             .tipoEmpresa(UPDATED_TIPO_EMPRESA)
@@ -248,6 +257,7 @@ class EmpresaResourceIT {
         Empresa testEmpresa = empresaList.get(empresaList.size() - 1);
         assertThat(testEmpresa.getRazaoSocial()).isEqualTo(UPDATED_RAZAO_SOCIAL);
         assertThat(testEmpresa.getNomeFantasia()).isEqualTo(UPDATED_NOME_FANTASIA);
+        assertThat(testEmpresa.getInscricaoEstadual()).isEqualTo(UPDATED_INSCRICAO_ESTADUAL);
         assertThat(testEmpresa.getDocumento()).isEqualTo(UPDATED_DOCUMENTO);
         assertThat(testEmpresa.getEmail()).isEqualTo(UPDATED_EMAIL);
         assertThat(testEmpresa.getTipoEmpresa()).isEqualTo(UPDATED_TIPO_EMPRESA);
@@ -336,8 +346,9 @@ class EmpresaResourceIT {
         partialUpdatedEmpresa
             .razaoSocial(UPDATED_RAZAO_SOCIAL)
             .nomeFantasia(UPDATED_NOME_FANTASIA)
-            .email(UPDATED_EMAIL)
-            .status(UPDATED_STATUS)
+            .documento(UPDATED_DOCUMENTO)
+            .tipoEmpresa(UPDATED_TIPO_EMPRESA)
+            .criadoEm(UPDATED_CRIADO_EM)
             .atualizadoEm(UPDATED_ATUALIZADO_EM);
 
         restEmpresaMockMvc
@@ -354,11 +365,12 @@ class EmpresaResourceIT {
         Empresa testEmpresa = empresaList.get(empresaList.size() - 1);
         assertThat(testEmpresa.getRazaoSocial()).isEqualTo(UPDATED_RAZAO_SOCIAL);
         assertThat(testEmpresa.getNomeFantasia()).isEqualTo(UPDATED_NOME_FANTASIA);
-        assertThat(testEmpresa.getDocumento()).isEqualTo(DEFAULT_DOCUMENTO);
-        assertThat(testEmpresa.getEmail()).isEqualTo(UPDATED_EMAIL);
-        assertThat(testEmpresa.getTipoEmpresa()).isEqualTo(DEFAULT_TIPO_EMPRESA);
-        assertThat(testEmpresa.getStatus()).isEqualTo(UPDATED_STATUS);
-        assertThat(testEmpresa.getCriadoEm()).isEqualTo(DEFAULT_CRIADO_EM);
+        assertThat(testEmpresa.getInscricaoEstadual()).isEqualTo(DEFAULT_INSCRICAO_ESTADUAL);
+        assertThat(testEmpresa.getDocumento()).isEqualTo(UPDATED_DOCUMENTO);
+        assertThat(testEmpresa.getEmail()).isEqualTo(DEFAULT_EMAIL);
+        assertThat(testEmpresa.getTipoEmpresa()).isEqualTo(UPDATED_TIPO_EMPRESA);
+        assertThat(testEmpresa.getStatus()).isEqualTo(DEFAULT_STATUS);
+        assertThat(testEmpresa.getCriadoEm()).isEqualTo(UPDATED_CRIADO_EM);
         assertThat(testEmpresa.getAtualizadoEm()).isEqualTo(UPDATED_ATUALIZADO_EM);
     }
 
@@ -377,6 +389,7 @@ class EmpresaResourceIT {
         partialUpdatedEmpresa
             .razaoSocial(UPDATED_RAZAO_SOCIAL)
             .nomeFantasia(UPDATED_NOME_FANTASIA)
+            .inscricaoEstadual(UPDATED_INSCRICAO_ESTADUAL)
             .documento(UPDATED_DOCUMENTO)
             .email(UPDATED_EMAIL)
             .tipoEmpresa(UPDATED_TIPO_EMPRESA)
@@ -398,6 +411,7 @@ class EmpresaResourceIT {
         Empresa testEmpresa = empresaList.get(empresaList.size() - 1);
         assertThat(testEmpresa.getRazaoSocial()).isEqualTo(UPDATED_RAZAO_SOCIAL);
         assertThat(testEmpresa.getNomeFantasia()).isEqualTo(UPDATED_NOME_FANTASIA);
+        assertThat(testEmpresa.getInscricaoEstadual()).isEqualTo(UPDATED_INSCRICAO_ESTADUAL);
         assertThat(testEmpresa.getDocumento()).isEqualTo(UPDATED_DOCUMENTO);
         assertThat(testEmpresa.getEmail()).isEqualTo(UPDATED_EMAIL);
         assertThat(testEmpresa.getTipoEmpresa()).isEqualTo(UPDATED_TIPO_EMPRESA);

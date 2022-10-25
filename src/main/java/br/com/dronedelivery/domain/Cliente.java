@@ -34,7 +34,7 @@ public class Cliente implements Serializable {
 
     @Min(value = 11)
     @Max(value = 11)
-    @Column(name = "documento", unique = true)
+    @Column(name = "documento")
     private Integer documento;
 
     @Column(name = "email")
@@ -51,7 +51,7 @@ public class Cliente implements Serializable {
 
     @OneToMany(mappedBy = "cliente")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    @JsonIgnoreProperties(value = { "pedidos", "razaoSocial", "cliente" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "pedidos", "empresa", "cliente" }, allowSetters = true)
     private Set<Endereco> enderecos = new HashSet<>();
 
     @OneToMany(mappedBy = "cliente")

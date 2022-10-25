@@ -86,7 +86,7 @@
     {
       "otherEntityName": "empresa",
       "otherEntityRelationshipName": "endereco",
-      "relationshipName": "razaoSocial",
+      "relationshipName": "empresa",
       "relationshipType": "many-to-one"
     },
     {

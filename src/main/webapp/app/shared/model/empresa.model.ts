@@ -8,6 +8,7 @@ export interface IEmpresa {
   id?: string;
   razaoSocial?: string | null;
   nomeFantasia?: string | null;
+  inscricaoEstadual?: string | null;
   documento?: number | null;
   email?: string | null;
   tipoEmpresa?: TipoEmpresa | null;

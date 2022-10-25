@@ -82,7 +82,7 @@ public class Endereco implements Serializable {
 
     @ManyToOne
     @JsonIgnoreProperties(value = { "enderecos", "telefones", "pedidos" }, allowSetters = true)
-    private Empresa razaoSocial;
+    private Empresa empresa;
 
     @ManyToOne
     @JsonIgnoreProperties(value = { "enderecos", "telefones", "pedidos" }, allowSetters = true)
@@ -329,16 +329,16 @@ public class Endereco implements Serializable {
         return this;
     }
 
-    public Empresa getRazaoSocial() {
-        return this.razaoSocial;
+    public Empresa getEmpresa() {
+        return this.empresa;
     }
 
-    public void setRazaoSocial(Empresa empresa) {
-        this.razaoSocial = empresa;
+    public void setEmpresa(Empresa empresa) {
+        this.empresa = empresa;
     }
 
-    public Endereco razaoSocial(Empresa empresa) {
-        this.setRazaoSocial(empresa);
+    public Endereco empresa(Empresa empresa) {
+        this.setEmpresa(empresa);
         return this;
     }
 
