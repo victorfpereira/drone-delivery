@@ -20,6 +20,7 @@
       "id": "Id",
       "razaoSocial": "Razao Social",
       "nomeFantasia": "Nome Fantasia",
+      "inscricaoEstadual": "Inscricao Estadual",
       "documento": "Documento",
       "email": "Email",
       "tipoEmpresa": "Tipo Empresa",

@@ -118,6 +118,7 @@ export const TelefoneUpdate = () => {
                 data-cy="ddd"
                 type="text"
                 validate={{
+                  min: { value: 2, message: translate('entity.validation.min', { min: 2 }) },
                   max: { value: 2, message: translate('entity.validation.max', { max: 2 }) },
                   validate: v => isNumber(v) || translate('entity.validation.number'),
                 }}
@@ -129,6 +130,7 @@ export const TelefoneUpdate = () => {
                 data-cy="numero"
                 type="text"
                 validate={{
+                  min: { value: 8, message: translate('entity.validation.min', { min: 8 }) },
                   max: { value: 9, message: translate('entity.validation.max', { max: 9 }) },
                   validate: v => isNumber(v) || translate('entity.validation.number'),
                 }}

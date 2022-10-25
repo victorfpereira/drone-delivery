@@ -60,7 +60,7 @@ public class Pedido implements Serializable {
     private Empresa empresa;
 
     @ManyToOne
-    @JsonIgnoreProperties(value = { "pedidos", "razaoSocial", "cliente" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "pedidos", "empresa", "cliente" }, allowSetters = true)
     private Endereco endereco;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here

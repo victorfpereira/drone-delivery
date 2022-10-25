@@ -113,6 +113,13 @@ export const EmpresaUpdate = () => {
                 type="text"
               />
               <ValidatedField
+                label={translate('dronedeliveryApp.empresa.inscricaoEstadual')}
+                id="empresa-inscricaoEstadual"
+                name="inscricaoEstadual"
+                data-cy="inscricaoEstadual"
+                type="text"
+              />
+              <ValidatedField
                 label={translate('dronedeliveryApp.empresa.documento')}
                 id="empresa-documento"
                 name="documento"

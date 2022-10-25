@@ -16,7 +16,7 @@
     {
       "fieldName": "documento",
       "fieldType": "Integer",
-      "fieldValidateRules": ["unique", "min", "max"],
+      "fieldValidateRules": ["min", "max"],
       "fieldValidateRulesMax": "11",
       "fieldValidateRulesMin": "11"
     },

@@ -12,14 +12,16 @@
     {
       "fieldName": "ddd",
       "fieldType": "Integer",
-      "fieldValidateRules": ["max"],
-      "fieldValidateRulesMax": "2"
+      "fieldValidateRules": ["min", "max"],
+      "fieldValidateRulesMax": "2",
+      "fieldValidateRulesMin": "2"
     },
     {
       "fieldName": "numero",
       "fieldType": "Long",
-      "fieldValidateRules": ["max"],
-      "fieldValidateRulesMax": "9"
+      "fieldValidateRules": ["min", "max"],
+      "fieldValidateRulesMax": "9",
+      "fieldValidateRulesMin": "8"
     },
     {
       "fieldName": "tipoTelefone",

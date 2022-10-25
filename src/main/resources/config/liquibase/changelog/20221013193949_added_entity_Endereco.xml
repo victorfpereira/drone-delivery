@@ -59,7 +59,7 @@
             <column name="atualizado_em" type="${datetimeType}">
                 <constraints nullable="true" />
             </column>
-            <column name="razao_social_id" type="${uuidType}">
+            <column name="empresa_id" type="${uuidType}">
                 <constraints nullable="true" />
             </column>
             <column name="cliente_id" type="${uuidType}">

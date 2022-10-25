@@ -28,10 +28,12 @@ public class Telefone implements Serializable {
     @Column(name = "id", length = 36)
     private UUID id;
 
+    @Min(value = 2)
     @Max(value = 2)
     @Column(name = "ddd")
     private Integer ddd;
 
+    @Min(value = 8L)
     @Max(value = 9L)
     @Column(name = "numero")
     private Long numero;

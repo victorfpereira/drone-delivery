@@ -18,9 +18,13 @@
       "fieldType": "String"
     },
     {
+      "fieldName": "inscricaoEstadual",
+      "fieldType": "String"
+    },
+    {
       "fieldName": "documento",
       "fieldType": "Integer",
-      "fieldValidateRules": ["unique", "min", "max"],
+      "fieldValidateRules": ["min", "max"],
       "fieldValidateRulesMax": "14",
       "fieldValidateRulesMin": "14"
     },
@@ -54,7 +58,7 @@
   "relationships": [
     {
       "otherEntityName": "endereco",
-      "otherEntityRelationshipName": "razaoSocial",
+      "otherEntityRelationshipName": "empresa",
       "relationshipName": "endereco",
       "relationshipType": "one-to-many"
     },

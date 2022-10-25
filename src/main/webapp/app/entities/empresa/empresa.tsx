@@ -111,6 +111,10 @@ export const Empresa = () => {
                 <th className="hand" onClick={sort('nomeFantasia')}>
                   <Translate contentKey="dronedeliveryApp.empresa.nomeFantasia">Nome Fantasia</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
+                <th className="hand" onClick={sort('inscricaoEstadual')}>
+                  <Translate contentKey="dronedeliveryApp.empresa.inscricaoEstadual">Inscricao Estadual</Translate>{' '}
+                  <FontAwesomeIcon icon="sort" />
+                </th>
                 <th className="hand" onClick={sort('documento')}>
                   <Translate contentKey="dronedeliveryApp.empresa.documento">Documento</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
@@ -142,6 +146,7 @@ export const Empresa = () => {
                   </td>
                   <td>{empresa.razaoSocial}</td>
                   <td>{empresa.nomeFantasia}</td>
+                  <td>{empresa.inscricaoEstadual}</td>
                   <td>{empresa.documento}</td>
                   <td>{empresa.email}</td>
                   <td>

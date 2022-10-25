@@ -22,7 +22,7 @@ export interface IEndereco {
   criadoEm?: string | null;
   atualizadoEm?: string | null;
   pedidos?: IPedido[] | null;
-  razaoSocial?: IEmpresa | null;
+  empresa?: IEmpresa | null;
   cliente?: ICliente | null;
 }
 

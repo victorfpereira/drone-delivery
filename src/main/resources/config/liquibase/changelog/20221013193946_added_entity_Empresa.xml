@@ -20,8 +20,11 @@
             <column name="nome_fantasia" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
+            <column name="inscricao_estadual" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
             <column name="documento" type="integer">
-                <constraints nullable="true" unique="true" uniqueConstraintName="ux_empresa__documento" />
+                <constraints nullable="true" />
             </column>
             <column name="email" type="varchar(255)">
                 <constraints nullable="true" />
@@ -63,6 +66,7 @@
             <column name="id" type="string"/>
             <column name="razao_social" type="string"/>
             <column name="nome_fantasia" type="string"/>
+            <column name="inscricao_estadual" type="string"/>
             <column name="documento" type="numeric"/>
             <column name="email" type="string"/>
             <column name="tipo_empresa" type="string"/>
